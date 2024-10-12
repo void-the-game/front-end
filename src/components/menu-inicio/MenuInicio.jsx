@@ -1,7 +1,7 @@
 import './menuInicio.css'
 
 
-function menuInicio (){
+function MenuInicio (){
     return(
         
             <div className="menu-inicio">
@@ -18,4 +18,4 @@ function menuInicio (){
     )
 }
 
-export default menuInicio
+export default MenuInicio
