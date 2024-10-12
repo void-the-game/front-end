@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+:root{
+    --font-family-menu:  "Aldrich", sans-serif;
+}
+
+.menu-inicio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+    margin: 0px auto;    
+    border-radius: 50%;    
+    border: none;
+
+    position: relative;
+    
+    width: 986px;
+    height: 388px;
+    
+
+    /* box-shadow: 0px 0px 50px 50px #03529b, inset 0px 0px 50px 50px #03529b; 
+    background: radial-gradient(circle, #191756e0 , #03529b ); */
+}
+.container-blur2{
+    position: relative;
+    width: 617px;
+    height: 311px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    
+}
+.blurback{
+    position: absolute;
+    background: rgba(3, 82, 155, 0.7);
+    filter: blur(50px);
+    z-index: 1;
+    width: 986px;
+    height: 388px;
+    border-radius: 50%;
+}
+.blurback2{
+    position: absolute;
+    width: 617px;
+    height: 311px;
+    border-radius: 50%;
+    z-index: 10;
+    
+    background: rgba(25, 23, 86, 0.63);
+    filter: blur(50px);
+}
+
+.btn-inicio{
+    text-align: center;
+    font-family: var(--font-family-menu);
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 5rem;
+    padding: 10px 50px;
+    z-index: 10;
+    position: relative;
+    
+}
+
+.btn-inicio:hover{
+    cursor: pointer;
+    scale: 1.1;
+    text-shadow:  0px 0px 10px #fff;
+}
+.borda-menu-div{
+    border-bottom: 3px solid #fff;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    justify-content: center;
+   
+}
+
+/*   
+
+position: absolute;
+width: 617px;
+height: 311px;
+
+
+background: rgba(25, 23, 86, 0.63);
+filter: blur(50px);
+ */

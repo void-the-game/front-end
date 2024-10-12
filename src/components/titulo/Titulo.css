@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+:root{
+    --font-family: "Bruno Ace", sans-serif;
+}
+
+.titulo-void{
+    color: #D8D8D8;
+    font-family: var(--font-family);
+    font-weight:100;
+    font-style: normal;
+    font-size: 7rem;
+    letter-spacing: 20px;
+    
+    
+}
