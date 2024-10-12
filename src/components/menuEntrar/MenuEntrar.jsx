@@ -1,7 +1,7 @@
 import './menuEntrar.css'
 
 
-function menuEntrar(){
+function MenuEntrar(){
     return(
         <div className="container-menu-entrer">
             <div>
@@ -13,4 +13,4 @@ function menuEntrar(){
     )
 }
 
-export default menuEntrar;
+export default MenuEntrar;

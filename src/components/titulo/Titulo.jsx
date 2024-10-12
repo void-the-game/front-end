@@ -1,7 +1,7 @@
 import './Titulo.css'
 
 
-function titulo(){
+function Titulo(){
 
     return(
         <div>
@@ -11,4 +11,4 @@ function titulo(){
     
 }
 
-export default titulo;
+export default Titulo;

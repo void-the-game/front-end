@@ -5,79 +5,17 @@ import './bolinhas.css';
 const bolinhas = 0 ;
 
 function Bolinhas() {
+    
+    const myArray = [...Array(70).keys()];
+
     return(
         <div class="bolinhas-container">
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
-            <div class="bolinha"></div>
+
+            {myArray.map((_)=>{
+                return <div class="bolinha"></div>
+            })}
+
+            
         </div>
     );
   }
