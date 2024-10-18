@@ -1,7 +1,10 @@
 import './menuEntrar.css'
 
 
+import Cadastro from '../../pages/cadastro/cadastro';
+
 function MenuEntrar(){
+   
     return(
         <div className="container-menu-entrer">
             <div>
