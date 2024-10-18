@@ -3,6 +3,7 @@ import Titulo from "../../components/titulo/Titulo"
 import MenuEntrar from "../../components/menuEntrar/menuEntrar"
 import MenuInicio from "../../components/menu-inicio/MenuInicio"
 import "./home.css"
+import BtnAjuda from "../../components/btnAjuda/BtnAjuda"
 
 
 function Home() {
@@ -24,6 +25,7 @@ function Home() {
             <MenuEntrar />
           </div>
         </div>
+        <BtnAjuda/>
 
       </div>
         

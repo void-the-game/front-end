@@ -1,5 +1,6 @@
 import Home from "./pages/home/home"
 import "./globalize.css"
+import Cadastro from "./pages/cadastro/cadastro"
 
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 
   return (
     
-      <Home />
+      // <Home />
+      <Cadastro/>
         
     
   )

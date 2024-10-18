@@ -1,75 +1,75 @@
 :root {
-    --cor1: #ff0000;  /* Red */
-    --cor2: #ff4500;  /* OrangeRed */
-    --cor3: #ff6347;  /* Tomato */
-    --cor4: #ff7f50;  /* Coral */
-    --cor5: #ff8c00;  /* DarkOrange */
-    --cor6: #ffa500;  /* Orange */
-    --cor7: #ffb6c1;  /* LightPink */
-    --cor8: #ff69b4;  /* HotPink */
-    --cor9: #ff1493;  /* DeepPink */
-    --cor10: #ff00ff; /* Magenta */
-    --cor11: #ff00cc; /* VividMagenta */
-    --cor12: #ff66ff; /* BrightPink */
-    --cor13: #ff99cc; /* BubblegumPink */
-    --cor14: #ff33cc; /* NeonPink */
-    --cor15: #ff3366; /* NeonRose */
-    --cor16: #ff0066; /* ElectricPink */
-    --cor17: #ffcc00; /* BrightGold */
-    --cor18: #ffff00; /* Yellow */
-    --cor19: #ffff33; /* CanaryYellow */
-    --cor20: #ffd700; /* Gold */
-    --cor21: #ffa07a; /* LightSalmon */
-    --cor22: #ff6347; /* BrightTomato */
-    --cor23: #ff4500; /* BrightOrangeRed */
-    --cor24: #ff1493; /* DeepPink */
-    --cor25: #ff69b4; /* VividPink */
-    --cor26: #ff00ff; /* Fuchsia */
-    --cor27: #ff99ff; /* VividLilac */
-    --cor28: #ff3399; /* BrightFuchsia */
-    --cor29: #ffcc33; /* VividAmber */
-    --cor30: #ffff66; /* LemonYellow */
-    --cor31: #00ff00; /* Lime */
-    --cor32: #32cd32; /* LimeGreen */
-    --cor33: #00fa9a; /* MediumSpringGreen */
-    --cor34: #00ff7f; /* SpringGreen */
-    --cor35: #00ffcc; /* BrightTurquoise */
-    --cor36: #00ffff; /* Cyan */
-    --cor37: #00ced1; /* DarkTurquoise */
-    --cor38: #4682b4; /* SteelBlue */
-    --cor39: #1e90ff; /* DodgerBlue */
-    --cor40: #0000ff; /* Blue */
-    --cor41: #0000cd; /* MediumBlue */
-    --cor42: #8a2be2; /* BlueViolet */
-    --cor43: #4b0082; /* Indigo */
-    --cor44: #9400d3; /* DarkViolet */
-    --cor45: #9932cc; /* DarkOrchid */
-    --cor46: #ba55d3; /* MediumOrchid */
-    --cor47: #ee82ee; /* Violet */
-    --cor48: #dda0dd; /* Plum */
-    --cor49: #da70d6; /* Orchid */
-    --cor50: #ff1493; /* DeepPink */
-    --cor50: #FF5733; /* Laranja Vibrante */
-    --cor51: #33FF57; /* Verde Limão */
-    --cor52: #5733FF; /* Azul Real */
-    --cor53: #FF33A8; /* Rosa Fúcsia */
-    --cor54: #33FFC4; /* Verde Água */
-    --cor55: #FFBD33; /* Amarelo Mostarda */
-    --cor56: #3385FF; /* Azul Elétrico */
-    --cor57: #A833FF; /* Roxo Vivo */
-    --cor58: #33FF85; /* Verde Neón */
-    --cor59: #FF3380; /* Rosa Choque */
-    --cor60: #FF8633; /* Laranja Forte */
-    --cor61: #33FFDA; /* Ciano Brilhante */
-    --cor62: #FF3333; /* Vermelho Intenso */
-    --cor63: #85FF33; /* Verde Claro Vibrante */
-    --cor64: #FF3385; /* Magenta Forte */
-    --cor65: #33A8FF; /* Azul Céu */
-    --cor66: #FFD733; /* Amarelo Solar */
-    --cor67: #FF336B; /* Rosa Neon */
-    --cor68: #33FF99; /* Verde Claro Neón */
-    --cor69: #FF3D33; /* Vermelho Coral */
-    --cor70: #33B5FF; /* Azul Celeste */
+    --cor1: #fff;  
+    --cor2: #fff;  
+    --cor3: #fff;  
+    --cor4: #fff;  
+    --cor5: #fff;  
+    --cor6: #fff;  
+    --cor7: #fff;  
+    --cor8: #fff;  
+    --cor9: #fff;  
+    --cor10: #fff; 
+    --cor11: #fff; 
+    --cor12: #fff; 
+    --cor13: #fff; 
+    --cor14: #fff; 
+    --cor15: #fff; 
+    --cor16: #fff; 
+    --cor17: #fff; 
+    --cor18: #fff; 
+    --cor19: #fff; 
+    --cor20: #fff; 
+    --cor21: #fff; 
+    --cor22: #fff; 
+    --cor23: #fff; 
+    --cor24: #fff; 
+    --cor25: #fff; 
+    --cor26: #fff; 
+    --cor27: #fff; 
+    --cor28: #fff; 
+    --cor29: #fff; 
+    --cor30: #fff; 
+    --cor31: #fff; 
+    --cor32: #fff; 
+    --cor33: #fff; 
+    --cor34: #fff; 
+    --cor35: #fff; 
+    --cor36: #fff; 
+    --cor37: #fff; 
+    --cor38: #fff; 
+    --cor39: #fff; 
+    --cor40: #fff; 
+    --cor41: #fff; 
+    --cor42: #fff; 
+    --cor43: #fff; 
+    --cor44: #fff; 
+    --cor45: #fff; 
+    --cor46: #fff; 
+    --cor47: #fff; 
+    --cor48: #fff; 
+    --cor49: #fff; 
+    --cor50: #fff; 
+    --cor51: #fff; 
+    --cor52: #fff; 
+    --cor53: #fff; 
+    --cor54: #fff; 
+    --cor55: #fff; 
+    --cor56: #fff; 
+    --cor57: #fff; 
+    --cor58: #fff; 
+    --cor59: #fff; 
+    --cor60: #fff; 
+    --cor61: #fff; 
+    --cor62: #fff; 
+    --cor63: #fff; 
+    --cor64: #fff; 
+    --cor65: #fff; 
+    --cor66: #fff; 
+    --cor67: #fff; 
+    --cor68: #fff; 
+    --cor69: #fff; 
+    --cor70: #fff;
+
   }
   
 
@@ -99,7 +99,7 @@
     left: 5%;
     width: 12px;
     height: 12px;
-    box-shadow: 0px 0px 10px 5pxx 10px var(--cor1);
+    box-shadow: 0px 0px 10px 5px var(--cor2);
 }
 .bolinha:nth-child(2n) {
     background-color: var(--cor2);
@@ -149,14 +149,14 @@
     height: 11px;
     box-shadow: 0px 0px 10px 5px var(--cor7);
 }
-.bolinha:nth-child(8n) {
+/* .bolinha:nth-child(8n) {
     background-color: var(--cor8);
     top: 8%;
     left: 20%;
     width: 5px;
     height: 5px;
     box-shadow: 0px 0px 10px 5px var(--cor8);
-}
+} */
 .bolinha:nth-child(9n) {
     background-color: var(--cor9);
     top: 14%;
@@ -325,14 +325,14 @@
     height: 10px;
     box-shadow: 0px 0px 10px 5px var(--cor29);
 }
-.bolinha:nth-child(30n) {
+/* .bolinha:nth-child(30n) {
     background-color: var(--cor30);
     top: 8%;
     left: 78%;
     width: 6px;
     height: 6px;
     box-shadow: 0px 0px 10px 5px var(--cor30);
-}
+} */
 .bolinha:nth-child(31n) {
     background-color: var(--cor31);
     top: 45%;
@@ -429,14 +429,14 @@
     height: 5px;
     box-shadow: 0px 0px 10px 5px var(--cor42);
 }
-.bolinha:nth-child(43n) {
+/* .bolinha:nth-child(43n) {
     background-color: var(--cor43);
     top: 20%;
     left: 18%;
     width: 8px;
     height: 8px;
     box-shadow: 0px 0px 10px 5px var(--cor43);
-}
+} */
 .bolinha:nth-child(44n) {
     background-color: var(--cor44);
     top: 25%;
@@ -477,14 +477,14 @@
     height: 10px;
     box-shadow: 0px 0px 10px 5px var(--cor48);
 }
-.bolinha:nth-child(49n) {
+/* .bolinha:nth-child(49n) {
     background-color: var(--cor49);
     top: 10%;
     left: 82%;
     width: 11px;
     height: 11px;
     box-shadow: 0px 0px 10px 5px var(--cor49);
-}
+} */
 .bolinha:nth-child(50n) {
     background-color: var(--cor50);
     top: 30%;
@@ -501,22 +501,22 @@
     height: 12px;
     box-shadow: 0px 0px 10px 5px var(--cor51);
 }
-.bolinha:nth-child(52n) {
+/* .bolinha:nth-child(52n) {
     background-color: var(--cor52);
     top: 85%;
     left: 20%;
     width: 9px;
     height: 9px;
     box-shadow: 0px 0px 10px 5px var(--cor52);
-}
-.bolinha:nth-child(53n) {
+} */
+/* .bolinha:nth-child(53n) {
     background-color: var(--cor53);
     top: 90%;
     left: 30%;
     width: 13px;
     height: 13px;
     box-shadow: 0px 0px 10px 5px var(--cor53);
-}
+} */
 .bolinha:nth-child(54n) {
     background-color: var(--cor54);
     top: 23%;
@@ -541,14 +541,14 @@
     height: 6px;
     box-shadow: 0px 0px 10px 5px var(--cor56);
 }
-.bolinha:nth-child(57n) {
+/* .bolinha:nth-child(57n) {
     background-color: var(--cor57);
     top: 88%;
     left: 70%;
     width: 10px;
     height: 10px;
     box-shadow: 0px 0px 10px 5px var(--cor57);
-}
+} */
 .bolinha:nth-child(58n) {
     background-color: var(--cor58);
     top: 93%;
@@ -565,22 +565,22 @@
     height: 7px;
     box-shadow: 0px 0px 10px 5px var(--cor59);
 }
-.bolinha:nth-child(60n) {
+/* .bolinha:nth-child(60n) {
     background-color: var(--cor60);
     top: 82%;
     left: 25%;
     width: 11px;
     height: 11px;
     box-shadow: 0px 0px 10px 5px var(--cor60);
-}
-.bolinha:nth-child(61n) {
+} */
+/* .bolinha:nth-child(61n) {
     background-color: var(--cor61);
     top: 84%;
     left: 35%;
     width: 8px;
     height: 8px;
     box-shadow: 0px 0px 10px 5px var(--cor61);
-}
+} */
 .bolinha:nth-child(62n) {
     background-color: var(--cor62);
     top: 75%;
@@ -589,30 +589,30 @@
     height: 13px;
     box-shadow: 0px 0px 10px 5px var(--cor62);
 }
-.bolinha:nth-child(63n) {
+/* .bolinha:nth-child(63n) {
     background-color: var(--cor63);
     top: 70%;
     left: 75%;
     width: 7px;
     height: 7px;
     box-shadow: 0px 0px 10px 5px var(--cor63);
-}
-.bolinha:nth-child(64n) {
+} */
+/* .bolinha:nth-child(64n) {
     background-color: var(--cor64);
     top: 85%;
     left: 65%;
     width: 10px;
     height: 10px;
     box-shadow: 0px 0px 10px 5px var(--cor64);
-}
-.bolinha:nth-child(65n) {
+} */
+/* .bolinha:nth-child(65n) {
     background-color: var(--cor65);
     top: 94%;
     left: 75%;
     width: 9px;
     height: 9px;
     box-shadow: 0px 0px 10px 5px var(--cor65);
-}
+} */
 .bolinha:nth-child(66n) {
     background-color: var(--cor66);
     top: 96%;
