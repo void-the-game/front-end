@@ -1,4 +1,4 @@
-import './btnAjuda.css'
+import './btnAjuda.scss'
 import btnAjudaIcon from './img/btnAjuda.svg';
 
 

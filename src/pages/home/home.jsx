@@ -1,9 +1,10 @@
 import Bolinhas from "../../components/bolinhas/Bolinhas"
-import Titulo from "../../components/titulo/Titulo"
-import MenuEntrar from "../../components/menuEntrar/menuEntrar"
-import MenuInicio from "../../components/menu-inicio/MenuInicio"
-import "./home.css"
+import Titulo from "../../components/telaInicio/titulo/Titulo"
+import MenuEntrar from "../../components/telaInicio/menuEntrar/menuEntrar"
+import MenuInicio from "../../components/telaInicio/menu-inicio/MenuInicio"
+import "./home.scss"
 import BtnAjuda from "../../components/btnAjuda/BtnAjuda"
+
 
 
 function Home() {
