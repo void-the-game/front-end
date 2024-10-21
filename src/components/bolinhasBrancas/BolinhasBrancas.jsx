@@ -9,10 +9,10 @@ function BolinhasBrancas() {
     const myArray = [...Array(70).keys()];
 
     return(
-        <div class="bolinhas-container">
+        <div class="bolinhasBrancas-container">
 
             {myArray.map((_)=>{
-                return <div class="bolinha"></div>
+                return <div class="bolinhaBranca"></div>
             })}
 
             
