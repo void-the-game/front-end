@@ -1,4 +1,6 @@
+import CustomButton from '../../Buttons/CustomButton'
 import './menuInicio.css'
+
 
 
 function MenuInicio (){
@@ -9,9 +11,21 @@ function MenuInicio (){
                 <div className='container-blur2'>
                     <div className='blurback2'></div>
                     <div className='borda-menu-div'>
-                        <button className="btn-inicio">jogar</button>
+                        <CustomButton
+                        className="btn-inicio"
+                        label="JOGAR"
+                        backColor="transparent"
+                        fontSize="2rem"
+                        />
                     </div>
-                        <button className="btn-inicio">salas</button>
+                    
+                    <CustomButton
+                        className="btn-inicio"
+                        label="SALAS"
+                        backColor="transparent"
+                        fontWeight="400"
+                        fontSize="2rem"
+                        />
                 </div>
             </div>
         

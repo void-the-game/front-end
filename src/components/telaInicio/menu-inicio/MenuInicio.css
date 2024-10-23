@@ -18,8 +18,7 @@
    
     
 
-    /* box-shadow: 0px 0px 50px 50px #03529b, inset 0px 0px 50px 50px #03529b; 
-    background: radial-gradient(circle, #191756e0 , #03529b ); */
+    
 }
 .container-blur2{
     position: relative;
@@ -56,13 +55,11 @@
 .btn-inicio{
     text-align: center;
     font-family: var(--font-family-menu);
-    border: none;
-    background-color: transparent;
-    color: #fff;
-    font-size: 3rem;
-    padding: 10px 50px;
+    
+      
     z-index: 10;
     position: relative;
+    
     
 }
 
