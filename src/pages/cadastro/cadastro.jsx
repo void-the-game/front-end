@@ -5,6 +5,7 @@ import btnVoltar from"../../components/img/btnVoltar.svg"
 import { Link } from "react-router-dom";
 import CustomButton from "../../components/Buttons/CustomButton"
 import "./cadastro.scss"
+import CustomInput from "../../components/Inputs/CustomInputs";
 
 
 
@@ -25,52 +26,66 @@ function Cadastro () {
                         
                         <div className="div-container-inputs">
                             <h2 className="titulo-cadastro">cadastro</h2>
-                            <div>
-                                <label htmlFor="usuario">Usuário</label>
-                                <input type="text" id="uruario" />
-                            </div>
-                            <div>
-                            <label htmlFor="email">E-mail</label>
-                                <input type="email" id="email" /> 
-                            </div>
-                            <div>
-                                <label htmlFor="confEmail">Confirmação do e-mail</label>
-                                <input type="email" id="confEmail" />
-                            </div>
-                            <div>
-                                <label htmlFor="password">Senha</label>
-                                <input type="password" id="password" />
-                            </div>
-                            <div>
-                                <label htmlFor="confPassword">Confirmação da senha</label>
-                                <input type="password" id="confPassword" />
-                            </div>
-                            <div className="div-btnConcluir">
-                                <CustomButton
-                                label="concluir"
-                                className="btn-concluir"
+                            <div>                                
+                                <CustomInput 
+                                    placeholder="Usuario"
+                                    type="text"
+                                    id="inputUsuario"
                                 />
                             </div>
-                           
-                        </div>
-                    </div>
-                    
-                    <div className="container-btn-concluir">
-                        <div className="blurback-concluir"></div>
-                        <div className="div-btnConcluir">
+                            <div>
+                                <CustomInput 
+                                    placeholder="E-mail"
+                                    type="email"
+                                    id="inputEmail"
+                                /> 
+                            </div>
+                            <div>
+                            <CustomInput 
+                                    placeholder="Confirme seu E-mail"
+                                    type="email"
+                                    id="inputConfEmail"
+                                />
+                                
+                            </div>
+                            <div>
+                                <CustomInput 
+                                    placeholder="Senha"
+                                    type="password"
+                                    id="inputPassword"
+                                />
+                                
+                            </div>
+                            <div>
+                                <CustomInput 
+                                    placeholder="Confirme sua Senha"
+                                    type="password"
+                                    id="inputConfPassword"
+                                />
+                                
+                            </div>
                             
                         </div>
                     </div>
+                    
                     
                 </main>
                     <div className="div-btnVoltar">
                     <Link to="/"  style={{ textDecoration: 'none' }} >           
                         <CustomButton
-                        imageSrc={btnVoltar}
+                        label="voltar"
                         width="5rem"
-                        imgWidth="5rem"
-                        imgHeight="5rem"
+                        
                         className="btn-voltar"
+                        />
+                    </Link>
+                    </div>
+                    <div className="div-btnConcluir">
+                    <Link to="/"  style={{ textDecoration: 'none' }} >           
+                        <CustomButton
+                        label="Concluir"
+                        width="5rem"                        
+                        className="btn-concluir"
                         />
                     </Link>
                     </div>
