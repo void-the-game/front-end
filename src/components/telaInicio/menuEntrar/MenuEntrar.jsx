@@ -1,17 +1,32 @@
+import CustomButton from '../../Buttons/CustomButton';
 import './menuEntrar.scss'
+import { Link } from "react-router-dom";
 
 
-import Cadastro from '../../../pages/cadastro/cadastro';
+
 
 function MenuEntrar(){
    
     return(
         <div className="containerMenuEntrar">
             <div>
-                <button className='__btn-entrar btn-entrar'>entrar</button>
+                
+                <CustomButton
+                label='entrar'
+                className="__btn-entrar btn-entrar"
+                color="#2E6E89"
+                />
             </div>
             
-            <button className='btn-entrar containerMenuEntrar__btn-criar-conta'>criar conta?</button>
+            <Link to="/cadastro"  style={{ textDecoration: 'none' }} >           
+                <CustomButton
+                    label='criar conta'
+                    className="__btn-entrar btn-entrar"
+                    color="#50BBE9"
+                    width="400px"
+                    
+                    />
+            </Link>    
         </div>
     )
 }

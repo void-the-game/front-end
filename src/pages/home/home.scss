@@ -8,3 +8,22 @@
     align-items: center;
     justify-content: space-between;
 }
+
+
+.btnAjuda-div{
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+}
+.btnAjuda{
+    
+    border-radius: 50%;
+    &:hover{
+        scale: 1.2;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    img{
+        width: 80px;
+    }
+}

@@ -1,8 +1,9 @@
 
 
-import BolinhasBrancas from "../../components/bolinhasBrancas/BolinhasBrancas";
-import BtnVoltar from "../../components/btnVoltar/BtnVoltar";
-
+import Bolinhas from "../../components/bolinhas/Bolinhas";
+import btnVoltar from"../../components/img/btnVoltar.svg"
+import { Link } from "react-router-dom";
+import CustomButton from "../../components/Buttons/CustomButton"
 import "./cadastro.scss"
 
 
@@ -11,19 +12,19 @@ function Cadastro () {
 
     return(
         <div>
-            <BolinhasBrancas/>
+            <Bolinhas isColored={false}/>
             <section className="container-cadastro">
 
                 <header className="cabecalho">
-                    <h2 className="titulo-cadastro">cadastro</h2> 
-                    <h2 className="titulo-void void-cadastro">VOID</h2>
+                     
+                    <h2 className="void-cadastro">VOID</h2>
                 </header>
                 <main>
-                    <div div-btnVoltar-container>           
-                        <BtnVoltar/>
-                    </div>
+                    
                     <div className="container-candastro-inputs">
+                        
                         <div className="div-container-inputs">
+                            <h2 className="titulo-cadastro">cadastro</h2>
                             <div>
                                 <label htmlFor="usuario">Usuário</label>
                                 <input type="text" id="uruario" />
@@ -44,19 +45,35 @@ function Cadastro () {
                                 <label htmlFor="confPassword">Confirmação da senha</label>
                                 <input type="password" id="confPassword" />
                             </div>
-                        
+                            <div className="div-btnConcluir">
+                                <CustomButton
+                                label="concluir"
+                                className="btn-concluir"
+                                />
+                            </div>
+                           
                         </div>
                     </div>
                     
                     <div className="container-btn-concluir">
                         <div className="blurback-concluir"></div>
                         <div className="div-btnConcluir">
-                            <button className="btn-concluir">Concluir</button>
+                            
                         </div>
                     </div>
                     
                 </main>
-
+                    <div className="div-btnVoltar">
+                    <Link to="/"  style={{ textDecoration: 'none' }} >           
+                        <CustomButton
+                        imageSrc={btnVoltar}
+                        width="5rem"
+                        imgWidth="5rem"
+                        imgHeight="5rem"
+                        className="btn-voltar"
+                        />
+                    </Link>
+                    </div>
         
             </section>
         </div>
