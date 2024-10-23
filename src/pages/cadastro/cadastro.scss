@@ -1,11 +1,6 @@
 
 
-$font-family-ace : "Bruno Ace", sans-serif;
-$font-family-aldri: "Aldrich", sans-serif;
-$cor-font-primaria: #fff;
-$cor-fundo-principal: #08072dee;
-$cor-fundo-input: rgba(131, 118, 210, 0.28);
-$cor-input: #CAC9D6;
+
 
 
 .container-cadastro{
@@ -25,8 +20,8 @@ $cor-input: #CAC9D6;
     
     .void-cadastro{
         
-        color: #D8D8D8;
-        font-family: var(--font-family);
+        color: var(--cor-titulo);
+        font-family: var(--font-family-ace);
         font-weight:600;
         font-style: normal;
         font-size: 3rem;
@@ -35,22 +30,7 @@ $cor-input: #CAC9D6;
             
         }
 }
-.div-btnVoltar{
-    position: fixed;
-    bottom: 5rem;
-    left: 20rem;
 
-    .btn-voltar{
-        background-color: transparent;
-        &:hover{
-            scale: 1.2;
-            transition: 0.3s;
-            cursor: pointer;
-            
-        }
-    }
-
-}
 
 main{
     display: flex;
@@ -58,16 +38,22 @@ main{
     align-items: center;
     gap: 2rem;
     
-    
+    .titulo-cadastro{
+        color: var(--cor-font-primaria);
+        
+        font-size: 2rem;
+        font-family: var(--font-family-ace);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.247);
+    }
 
     .container-candastro-inputs{
-        background-color: $cor-fundo-principal;
+        background-color: var(--cor-fundo-principal);
         border-radius: 100px;
 
        .div-container-inputs{
             
            padding: 3rem;
-            background-color: $cor-fundo-input;
+            background-color: var(--cor-fundo-input);
             border-radius: 100px;
             display: flex;
             flex-direction: column;
@@ -85,7 +71,7 @@ main{
               .btn-concluir{
                 border: none;
                 background-color: transparent;
-                color: $cor-font-primaria;
+                color: var(--cor-font-primaria);
                 font-size: 2rem;
                 text-decoration: underline;
                 text-underline-offset: 6px;
@@ -101,35 +87,9 @@ main{
             }
     
         }
-                .titulo-cadastro{
-                    color: $cor-font-primaria;
-                    
-                    font-size: 2rem;
-                    font-family: $font-family-ace;
-                    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.247);
-                }
-
-            div{
-                display: flex;
-                flex-direction: column;
                 
 
-                label{
-                    font-family: $font-family-ace;
-                    color: $cor-font-primaria;
-                    margin-bottom: 8px;
-                }
-                input{
-                    height: 1.5rem;
-                    border: none;
-                    width: 15rem;
-                    font-size: 1rem;
-                    background-color: #CAC9D6;
-                    border-radius: 10px;
-                    padding: 0 10px;
-
-                }
-            }
+           
             
 
 
