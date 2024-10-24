@@ -26,7 +26,7 @@ function CustomButton ({ label, width, height, backColor, color, fontSize,fontWe
     return (
       <button style={buttonStyle} className={className}>
         {imageSrc && <img src={imageSrc} alt="button-icon" style={imageStyle} />}
-        {label}
+        <span>{label}</span>
       </button>
     );
   };
