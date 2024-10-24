@@ -1,0 +1,176 @@
+
+
+
+
+
+.container-cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+.cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+
+    
+    .void-cadastro{
+        
+        color: var(--cor-titulo);
+        font-family: var(--font-family-ace);
+        font-weight:600;
+        font-style: normal;
+        font-size: 3rem;
+        letter-spacing: 20px;
+            
+            
+        }
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+    .titulo-cadastro{
+        color: var(--cor-font-primaria);
+        
+        font-size: 2rem;
+        font-family: var(--font-family-ace);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.247);
+    }
+
+    .container-candastro-inputs{
+        background-color: var(--cor-fundo-principal);
+        border-radius: 100px;
+
+       .div-container-inputs{
+            
+           padding: 3rem;
+            background-color: var(--cor-fundo-input);
+            border-radius: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            
+                
+             
+
+           
+            
+
+
+        } 
+    }
+
+    
+    
+    
+}
+.div-btnConcluir, .div-btnVoltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div-btnConcluir{
+    position: fixed;
+    bottom: 15%;
+    right: 20%;
+    &__blur{
+        position: absolute;
+        z-index: 1;
+        border-radius: 100%;
+        height: 5rem;
+        width: 12rem;
+        background: rgba(104, 213, 203, 0.66);
+        filter: blur(32.5px);
+    }
+    a{
+        z-index: 5;
+        .btn-concluir{
+            z-index: 10;
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 1rem;
+            &:hover{                
+                scale: 1.1;
+                text-shadow: 0 0 5px #fff;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            
+            span{
+                &:active{
+                    color: rgb(1, 170, 1);
+                    
+                }   
+            }
+           
+            
+        }
+    }
+}  
+.div-btnVoltar{
+    position: fixed;
+    bottom: 15%;
+    left: 20%;
+    &__blur{
+        position: absolute;
+        z-index: 1;
+        border-radius: 100%;
+        height: 5rem;
+        width: 12rem;
+        background: rgba(211, 211, 211, 0.53);
+        filter: blur(32.5px);
+    }
+    a{
+        z-index: 5;
+        button{
+            z-index: 10;
+            display: flex;
+            gap: 1rem;
+            
+            &:hover{                
+                scale: 1.1;
+                text-shadow: 0 0 5px #fff;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            span{
+                &:active{
+                    color: rgb(6, 52, 151);
+                    
+                }   
+            }
+        }
+    }
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
