@@ -1,13 +1,13 @@
 
 
 import Bolinhas from "../../components/bolinhas/Bolinhas";
-import btnVoltar from"../../components/img/btnVoltar.svg"
+
 import { Link } from "react-router-dom";
 import CustomButton from "../../components/Buttons/CustomButton"
 import "./cadastro.scss"
 import CustomInput from "../../components/Inputs/CustomInputs";
-
-
+import setaEsquerda from "../../components/img/setaEsquerda.svg";
+import setaDireita from "../../components/img/setaDireita.svg";
 
 function Cadastro () {
 
@@ -16,10 +16,7 @@ function Cadastro () {
             <Bolinhas isColored={false}/>
             <section className="container-cadastro">
 
-                <header className="cabecalho">
-                     
-                    <h2 className="void-cadastro">VOID</h2>
-                </header>
+                
                 <main>
                     
                     <div className="container-candastro-inputs">
@@ -50,6 +47,7 @@ function Cadastro () {
                             </div>
                             <div>
                                 <CustomInput 
+
                                     placeholder="Senha"
                                     type="password"
                                     id="inputPassword"
@@ -71,23 +69,32 @@ function Cadastro () {
                     
                 </main>
                     <div className="div-btnVoltar">
-                    <Link to="/"  style={{ textDecoration: 'none' }} >           
-                        <CustomButton
-                        label="voltar"
-                        width="5rem"
-                        
-                        className="btn-voltar"
-                        />
-                    </Link>
-                    </div>
+                        <div className="div-btnVoltar__blur"></div>
+                        <Link to="/"  style={{ textDecoration: 'none' }} >           
+                            <CustomButton
+                            label="Voltar"
+                            width="5rem"
+                            imageSrc={setaEsquerda}
+                            imgWidth="1.5rem" 
+                            imgHeight="1.5rem"
+                            
+                            className="btn-voltar"
+                            />
+                        </Link>
+                    </div> 
                     <div className="div-btnConcluir">
-                    <Link to="/"  style={{ textDecoration: 'none' }} >           
-                        <CustomButton
-                        label="Concluir"
-                        width="5rem"                        
-                        className="btn-concluir"
-                        />
-                    </Link>
+                        <div className="div-btnConcluir__blur"></div>
+                        <Link to="/"  style={{ textDecoration: 'none' }} >           
+                            <CustomButton
+                            label="Concluir"
+                            width="5rem"                        
+                            className="btn-concluir"
+                            imageSrc={setaDireita}
+                            imgWidth="1.5rem" 
+                            imgHeight="1.5rem"
+                            
+                            />
+                        </Link>
                     </div>
         
             </section>

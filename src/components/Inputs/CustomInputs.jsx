@@ -5,9 +5,9 @@ import './CustomInputs.scss'
 function CustomInput ({border, width, height,type, id, label, placeholder, className,classNameLabel}) {
     const InputStyle = {
         width: width || '15rem',
-        height: height || '3rem',
+        height: height || '2rem',
         border: border || '1px solid #fff',
-        borderRadius: '20px',
+        borderRadius: '10px',
         backgroundColor: '#B1AAFF',
         padding: '0 10px',
         color:'#fff',
