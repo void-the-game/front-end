@@ -78,12 +78,15 @@
 
 .bolinhas-container {
     background-color: #08072D;
+    
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Garante que as bolinhas fiquem atrás do menu */
+    
+    
+    z-index: -1; 
   }
   
   .bolinha {
