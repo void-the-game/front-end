@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom"
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
+import { apiDev } from "../../services/api"
+import { toast } from "react-toastify"
 
 const Login = () => {
   const schema = yup.object().shape({
@@ -22,7 +24,20 @@ const Login = () => {
   const navigate = useNavigate()
 
   const handleLogin = (data) => {
-    console.log(data)
+    apiDev
+      .post("/user/login", data)
+      .then((resp) => {
+        localStorage.setItem("@Void:user", resp.data.username)
+        localStorage.setItem("@Void:token", resp.data.accessToken)
+        toast.success("Bem-Vindo ao VOID!", { className: "toast-message" })
+        navigate("/")
+      })
+      .catch((err) => {
+        console.log(err)
+        toast.error("Erro na autenticação, verifique seu e-mail ou senha", {
+          className: "toast-message",
+        })
+      })
   }
 
   const handleKeyPress = (e) => {
@@ -62,7 +77,7 @@ const Login = () => {
           <div className={styles["s-buttons__blur--White"]} />
 
           <div className={styles["s-buttons__backElements"]}>
-            <img src={setaEsquerda} alt="" />
+            <img src={setaEsquerda} alt="seta branca" />
             <span>Voltar</span>
           </div>
         </button>
@@ -75,7 +90,7 @@ const Login = () => {
           <div className={styles["s-buttons__blur--Purple"]} />
 
           <div className={styles["s-buttons__nextElements"]}>
-            <img src={purpleArrow} alt="" />
+            <img src={purpleArrow} alt="seta roxa" />
             <span>Entrar</span>
           </div>
         </button>

@@ -93,6 +93,12 @@ function Cadastro() {
     )
   }
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit(handleRegister)()
+    }
+  }
+
   return (
     <>
       <section className="container-cadastro">
@@ -100,7 +106,7 @@ function Cadastro() {
         <main className="main">
           <div className="div-container-inputs">
             <h2 className="titulo-cadastro">CADASTRO</h2>
-            <form action="">
+            <form onKeyDown={handleKeyPress}>
               <div>
                 <CustomInput
                   placeholder="Usuario"
@@ -145,19 +151,19 @@ function Cadastro() {
                 {errors.password && <span>{errors.password?.message}</span>}
                 <div className="div-password-errors">
                   {!passwordErrors.minLength && (
-                    <span>Está faltando ter no mínimo 8 caracteres.</span>
+                    <span>A senha deve conter 8 caracteres.</span>
                   )}
                   {!passwordErrors.hasUppercase && (
-                    <span>Está faltando uma letra maiúscula.</span>
+                    <span>A senha deve conter uma letra maiúscula.</span>
                   )}
                   {!passwordErrors.hasLowercase && (
-                    <span>Está faltando uma letra minúscula.</span>
+                    <span>A senha deve conter uma letra minúscula.</span>
                   )}
                   {!passwordErrors.hasNumber && (
-                    <span>Está faltando um número.</span>
+                    <span>A senha deve conter um número.</span>
                   )}
                   {!passwordErrors.hasSpecial && (
-                    <span>Está faltando um caractere especial.</span>
+                    <span>A senha deve conter um caractere especial.</span>
                   )}
                 </div>
               </div>
