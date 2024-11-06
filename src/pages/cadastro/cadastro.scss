@@ -1,91 +1,90 @@
-
-
-
-
-
-.container-cadastro{
+.container-cadastro {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     height: 100vh;
-}
-.cabecalho{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
-    
 
-    
-    .void-cadastro{
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         
-        color: var(--cor-titulo);
-        font-family: var(--font-family-ace);
-        font-weight:600;
-        font-style: normal;
-        font-size: 3rem;
-        letter-spacing: 20px;
-            
+
+        .titulo-cadastro {
+            color: #D8D8D8;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-family: var(--font-family-ace);
             
         }
-}
 
-
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    
-    .titulo-cadastro{
-        color: var(--cor-font-primaria);
         
-        font-size: 2rem;
-        font-family: var(--font-family-ace);
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.247);
-    }
 
-    .container-candastro-inputs{
-        background-color: var(--cor-fundo-principal);
-        border-radius: 100px;
-
-       .div-container-inputs{
-            
-           padding: 3rem;
-            background-color: var(--cor-fundo-input);
-            border-radius: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-
-            
+            .div-container-inputs {
+                background-color: #262251;
+                width: 79%;
+                max-width: 430px;
+                border-radius: 100px;
+                padding: 60px 30px 10px 30px;          
                 
-             
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                form{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    width: 85%;
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        min-height: 75px;
+                        gap: 5px;
+                        
+                        span {
+                            color: #CB2E2E;
+                            font-size: 1.4rem;
+                            margin-left: 15px;
+                            font-family: 'Aldrich';
+                          }
+                    }
 
-           
-            
-
-
-        } 
+                    
+                }
+                
+                
+               
+            }
+        
     }
+}
 
-    
-    
+
+
+.container-buttons{
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 85%;
+    max-width: 1430px;
     
 }
-.div-btnConcluir, .div-btnVoltar{
+.div-btnConcluir,
+.div-btnVoltar {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.div-btnConcluir{
-    position: fixed;
-    bottom: 15%;
-    right: 20%;
-    &__blur{
+
+.div-btnConcluir {
+    
+
+    &__blur {
         position: absolute;
         z-index: 1;
         border-radius: 100%;
@@ -94,36 +93,42 @@
         background: rgba(104, 213, 203, 0.66);
         filter: blur(32.5px);
     }
-    a{
+
+    a {
         z-index: 5;
-        .btn-concluir{
+
+        .btn-concluir {
             z-index: 10;
             display: flex;
             flex-direction: row-reverse;
             gap: 1rem;
-            &:hover{                
+
+            &:hover {
                 scale: 1.1;
                 text-shadow: 0 0 5px #fff;
                 cursor: pointer;
                 transition: 0.3s;
             }
-            
-            span{
-                &:active{
+
+            span {
+                font-family: var(--font-family-aldri);
+                font-size: 2rem;
+
+                &:active {
                     color: rgb(1, 170, 1);
-                    
-                }   
+
+                }
             }
-           
-            
+
+
         }
     }
-}  
-.div-btnVoltar{
-    position: fixed;
-    bottom: 15%;
-    left: 20%;
-    &__blur{
+}
+
+.div-btnVoltar {
+    
+
+    &__blur {
         position: absolute;
         z-index: 1;
         border-radius: 100%;
@@ -132,45 +137,31 @@
         background: rgba(211, 211, 211, 0.53);
         filter: blur(32.5px);
     }
-    a{
+
+    a {
         z-index: 5;
-        button{
+
+        button {
             z-index: 10;
             display: flex;
             gap: 1rem;
-            
-            &:hover{                
+
+            &:hover {
                 scale: 1.1;
                 text-shadow: 0 0 5px #fff;
                 cursor: pointer;
                 transition: 0.3s;
             }
-            span{
-                &:active{
+
+            span {
+                font-family: var(--font-family-aldri);
+                font-size: 2rem;
+
+                &:active {
                     color: rgb(6, 52, 151);
-                    
-                }   
+
+                }
             }
         }
     }
-}  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

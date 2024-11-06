@@ -1,5 +1,18 @@
-.custom-input::placeholder {
-    font-family: 'Bruno Ace', sans-serif;
-    color: #fff;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.815);
+.custom-input{
+    background: #948EDD;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    padding: 5px 20px;
+    color: #F0EFF3;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
+    font-family: 'Aldrich';
+    outline: 0;
+
+    &::placeholder {
+    font-family: var(--font-family-aldri);
+    color: #F0EFF3;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    
+}
 }

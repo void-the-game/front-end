@@ -61,19 +61,22 @@ function Cadastro() {
   }
 
   return (
-    <div>
-      <Bolinhas isColored={false} />
+    <>
+      
       <section className="container-cadastro">
+        <Bolinhas isColored={false} />
         <main className="main">
-          <div className="container-candastro-inputs">
+          
             <div className="div-container-inputs">
-              <h2 className="titulo-cadastro">cadastro</h2>
-              <div>
+              <h2 className="titulo-cadastro">CADASTRO</h2>
+              <form action="">
+                <div>
                 <CustomInput
                   placeholder="Usuario"
                   type="text"
                   id="inputUsuario"
                 />
+                {/* <span>error</span> */}
               </div>
               <div>
                 <CustomInput
@@ -81,6 +84,7 @@ function Cadastro() {
                   type="email"
                   id="inputEmail"
                 />
+                {/* <span>error</span> */}
               </div>
               <div>
                 <CustomInput
@@ -88,6 +92,7 @@ function Cadastro() {
                   type="email"
                   id="inputConfEmail"
                 />
+                {/* <span>error</span> */}
               </div>
               <div>
                 <CustomInput
@@ -95,6 +100,11 @@ function Cadastro() {
                   type="password"
                   id="inputPassword"
                 />
+                {/* <span>error</span>
+                <span>error</span>
+                <span>error</span>
+                <span>error</span>
+                <span>error</span> */}
               </div>
               <div>
                 <CustomInput
@@ -102,11 +112,15 @@ function Cadastro() {
                   type="password"
                   id="inputConfPassword"
                 />
+                {/* <span>error</span> */}
               </div>
+              </form>
+              
             </div>
-          </div>
+          
         </main>
-        <div className="div-btnVoltar">
+        <div className="container-buttons">
+          <div className="div-btnVoltar">
           <div className="div-btnVoltar__blur"></div>
           <Link to="/" style={{ textDecoration: "none" }}>
             <CustomButton
@@ -132,8 +146,10 @@ function Cadastro() {
             />
           </Link>
         </div>
+        </div>
+        
       </section>
-    </div>
+    </>
   )
 }
 
