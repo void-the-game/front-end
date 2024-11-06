@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
 import { apiDev } from "../../services/api"
+import { toast } from "react-toastify"
 
 function Cadastro() {
   const schema = yup.object().shape({
@@ -66,13 +67,30 @@ function Cadastro() {
       return
     }
 
-    delete data.emailConfirm
-    delete data.passwordConfirm
+    const registerData = {
+      username: data.username,
+      email: data.email,
+      password: data.password,
+    }
 
-    apiDev
-      .post("/user/create", data)
-      .then((resp) => console.log(resp))
-      .catch((err) => console.log(err))
+    toast.promise(
+      apiDev
+        .post("/user/create", registerData)
+        .then((resp) => {
+          toast.success("Cadastro realizado com sucesso!", {
+            className: "toast-message",
+          })
+          navigate("/login")
+        })
+        .catch((err) => {
+          console.log(err)
+          toast.error("Erro no cadastro", { className: "toast-message" })
+        }),
+      {
+        pending: "Cadastrando",
+      },
+      { className: "toast-message" }
+    )
   }
 
   return (
