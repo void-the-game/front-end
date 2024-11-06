@@ -1,13 +1,65 @@
 import Bolinhas from "../../components/bolinhas/Bolinhas"
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import CustomButton from "../../components/Buttons/CustomButton"
 import "./cadastro.scss"
 import CustomInput from "../../components/Inputs/CustomInputs"
 import setaEsquerda from "../../components/img/setaEsquerda.svg"
 import setaDireita from "../../components/img/setaDireita.svg"
+import * as yup from "yup"
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { useState } from "react"
 
 function Cadastro() {
+  const schema = yup.object().shape({
+    username: yup.string().required("Campo Obrigatório"),
+    email: yup.string().required("Campo Obrigatório").email("E-mail inválido"),
+    emailConfirm: yup
+      .string()
+      .required("Campo Obrigatório")
+      .email("E-mail inválido")
+      .oneOf([yup.ref("email")], "Os E-mails devem coincidir"),
+    password: yup.string().required("Campo Obrigatório"),
+    passwordConfirm: yup
+      .string()
+      .required("Campo Obrigatório")
+      .oneOf([yup.ref("password")], "As senhas devem coincidir"),
+  })
+
+  const [passwordErrors, setPasswordErrors] = useState({
+    minLength: true,
+    hasUppercase: true,
+    hasLowercase: true,
+    hasNumber: true,
+    hasSpecial: true,
+  })
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) })
+
+  const navigate = useNavigate()
+
+  const handleLogin = (data) => {
+    console.log(data)
+  }
+
+  // Função para validar a senha em tempo real
+  const handlePasswordChange = (e) => {
+    const password = e.target.value
+
+    setPasswordErrors({
+      minLength: password.length >= 8,
+      hasUppercase: /[A-Z]/.test(password),
+      hasLowercase: /[a-z]/.test(password),
+      hasNumber: /[0-9]/.test(password),
+      hasSpecial: /[!@#$%^&*(),.?":{}|<>]/.test(password),
+    })
+  }
+
   return (
     <div>
       <Bolinhas isColored={false} />
