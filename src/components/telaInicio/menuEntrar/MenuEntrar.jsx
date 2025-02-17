@@ -11,17 +11,15 @@ function MenuEntrar() {
       <div>
         <CustomButton
           label="entrar"
-          className="__btn-entrar btn-entrar"
-          color="#2E6E89"
+          className="__btn-login btn-login"
           onClick={() => navigate("/login")}
         />
       </div>
 
-      <Link to="/cadastro" style={{ textDecoration: "none" }}>
+      <Link to="/cadastro" className="link-cadastro">
         <CustomButton
           label="criar conta"
           className="__btn-entrar btn-entrar"
-          color="#50BBE9"
           width="400px"
         />
       </Link>

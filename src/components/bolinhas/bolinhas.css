@@ -1,108 +1,30 @@
 :root {
-    --cor1: #3037E0;  /* Alterado para Azul */
-    --cor2: #3037E0;  /* Azul */
-    --cor3: #3037E0;  /* Azul */
-    --cor4: #3037E0;  /* Azul */
-    --cor5: #3037E0;  /* Azul */
-    --cor6: #3037E0;  /* Azul */
-    --cor7: #EBFF05;  /* Alterado para Amarelo Neon */
-    --cor8: #EBFF05;  /* Amarelo Neon */
-    --cor9: #EBFF05;  /* Amarelo Neon */
-    --cor10: #EBFF05; /* Amarelo Neon */
-    --cor11: #EBFF05; /* Amarelo Neon */
-    --cor12: #EBFF05; /* Amarelo Neon */
-    --cor13: #00B027; /* Alterado para Verde */
-    --cor14: #00B027; /* Verde */
-    --cor15: #00B027; /* Verde */
-    --cor16: #00B027; /* Verde */
-    --cor17: #00B027; /* Verde */
-    --cor18: #00B027; /* Verde */
-    --cor19: #E603CF; /* Alterado para Magenta */
-    --cor20: #E603CF; /* Magenta */
-    --cor21: #E603CF; /* Magenta */
-    --cor22: #E603CF; /* Magenta */
-    --cor23: #E603CF; /* Magenta */
-    --cor24: #E603CF; /* Magenta */
-    --cor25: #3037E0; /* Azul */
-    --cor26: #3037E0; /* Azul */
-    --cor27: #3037E0; /* Azul */
-    --cor28: #3037E0; /* Azul */
-    --cor29: #3037E0; /* Azul */
-    --cor30: #3037E0; /* Azul */
-    --cor31: #00B027; /* Verde */
-    --cor32: #00B027; /* Verde */
-    --cor33: #00B027; /* Verde */
-    --cor34: #00B027; /* Verde */
-    --cor35: #00B027; /* Verde */
-    --cor36: #00B027; /* Verde */
-    --cor37: #00B027; /* Verde */
-    --cor38: #3037E0; /* Azul */
-    --cor39: #3037E0; /* Azul */
-    --cor40: #3037E0; /* Azul */
-    --cor41: #3037E0; /* Azul */
-    --cor42: #3037E0; /* Azul */
-    --cor43: #3037E0; /* Azul */
-    --cor44: #3037E0; /* Azul */
-    --cor45: #3037E0; /* Azul */
-    --cor46: #3037E0; /* Azul */
-    --cor47: #3037E0; /* Azul */
-    --cor48: #3037E0; /* Azul */
-    --cor49: #3037E0; /* Azul */
-    --cor50: #3037E0; /* Azul */
-    --cor50: #E603CF; /* Magenta */
-    --cor51: #00B027; /* Verde */
-    --cor52: #3037E0; /* Azul */
-    --cor53: #E603CF; /* Magenta */
-    --cor54: #00B027; /* Verde */
-    --cor55: #EBFF05; /* Amarelo Neon */
-    --cor56: #3037E0; /* Azul */
-    --cor57: #E603CF; /* Magenta */
-    --cor58: #00B027; /* Verde */
-    --cor59: #E603CF; /* Magenta */
-    --cor60: #EBFF05; /* Amarelo Neon */
-    --cor61: #00B027; /* Verde */
-    --cor62: #3037E0; /* Azul */
-    --cor63: #00B027; /* Verde */
-    --cor64: #E603CF; /* Magenta */
-    --cor65: #3037E0; /* Azul */
-    --cor66: #EBFF05; /* Amarelo Neon */
-    --cor67: #E603CF; /* Magenta */
-    --cor68: #00B027; /* Verde */
-    --cor69: #3037E0; /* Azul */
-
-    
+    --azul: #2e82b9;  /* Alterado para Azul */
+    --branco: #fff;  /* Azul */
+    --verde: #00B027; /* Alterado para Verde */
+    --rosa: #E603CF; /* Alterado para Magenta */
+    --amarelo: #EBFF05; /* Amarelo Neon */
   }
   
 
-
-
 .bolinhas-container {
-    background-color: #08072D;
-    
+    background-color: #000000;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    
-    z-index: -1; 
+    z-index: -1;
+
   }
-  
+
   .bolinha {
     position: absolute;
-    
     border-radius: 50%;
-    animation: pulse 1s infinite alternate;
+    animation: pulse 0.7s infinite alternate;
   }
   
   
-  
-  
-  
-  
-  
- 
   @keyframes pulse {
     from {
       opacity: 0.5;

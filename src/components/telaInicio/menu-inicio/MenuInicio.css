@@ -12,14 +12,11 @@
     margin: 0px auto;    
     border-radius: 50%;    
     border: none;
-
     position: relative;
     
-   
-    
-
-    
 }
+
+
 .container-blur2{
     position: relative;
     
@@ -34,7 +31,7 @@
 }
 .blurback{
     position: absolute;
-    background: rgba(3, 82, 155, 0.7);
+    background: rgba(16, 59, 99, 0.7);
     filter: blur(50px);
     z-index: 1;
     width: 40rem;
@@ -47,27 +44,27 @@
     height: 8rem;
     border-radius: 50%;
     z-index: 10;
-    
-    background: rgba(25, 23, 86, 0.63);
+    background: rgba(149, 148, 175, 0.432);
     filter: blur(50px);
 }
 
-.btn-inicio{
+.btn-inicio {
     text-align: center;
     font-family: var(--font-family-menu);
-    
-      
     z-index: 10;
     position: relative;
-    
-    
+    color: #dadada;
+    transition: all 0.3s ease; 
 }
 
-.btn-inicio:hover{
+.btn-inicio:hover {
     cursor: pointer;
     scale: 1.1;
-    text-shadow:  0px 0px 10px #fff;
+    text-shadow: 0px 0px 10px #00B027;
+    color: #fff;
 }
+
+
 .borda-menu-div{
     border-bottom: 3px solid #fff;
     z-index: 10;
@@ -76,14 +73,3 @@
     justify-content: center;
    
 }
-
-/*   
-
-position: absolute;
-width: 617px;
-height: 311px;
-
-
-background: rgba(25, 23, 86, 0.63);
-filter: blur(50px);
- */

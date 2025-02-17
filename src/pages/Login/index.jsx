@@ -19,7 +19,7 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) })
+  } = useForm({ resolver: yupResolver(schema) }) 
 
   const navigate = useNavigate()
 
