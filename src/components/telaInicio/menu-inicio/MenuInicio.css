@@ -1,60 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 
-:root{
-    --font-family-menu:  "Aldrich", sans-serif;
+:root {
+    --font-family-menu: "Aldrich", sans-serif;
 }
 
-.menu-inicio{
+.menu-inicio {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;    
-    margin: 0px auto;    
-    border-radius: 50%;    
+    flex-direction: column;
+    margin: 0px auto;
+    border-radius: 50%;
     border: none;
     position: relative;
-    
 }
-
-
-.container-blur2{
+.container-blur2 {
     position: relative;
-    
     z-index: 2;
     display: flex;
     flex-direction: column;
-    
-    display: flex;
     align-items: center;
     justify-content: center;
-    
 }
-.blurback{
+
+.blurback {
     position: absolute;
-    background: rgba(16, 59, 99, 0.7);
+    background: rgba(9, 114, 235, 0.39);
     filter: blur(50px);
     z-index: 1;
     width: 40rem;
     height: 15rem;
     border-radius: 50%;
+    animation: pulsar 3s ease-in-out infinite; /* Adicionando a animação */
 }
-.blurback2{
+
+.blurback2 {
     position: absolute;
     width: 25rem;
     height: 8rem;
     border-radius: 50%;
     z-index: 10;
-    background: rgba(149, 148, 175, 0.432);
+    background: rgba(51, 9, 107, 0.521);
     filter: blur(50px);
 }
 
 .btn-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-family: var(--font-family-menu);
     z-index: 10;
     position: relative;
     color: #dadada;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
 .btn-inicio:hover {
@@ -64,12 +63,26 @@
     color: #fff;
 }
 
-
-.borda-menu-div{
+.borda-menu-div {
     border-bottom: 3px solid #fff;
     z-index: 10;
     position: relative;
     display: flex;
     justify-content: center;
-   
+}
+
+/* Definindo a animação "pulsar" */
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        opacity: 0.7; /* Opacidade inicial */
+    }
+    50% {
+        transform: scale(1.2); /* Aumenta o tamanho */
+        opacity: 0.8; /* Leve aumento da opacidade */
+    }
+    100% {
+        transform: scale(1); /* Diminui o tamanho */
+        opacity: 0.7; /* Volta para a opacidade inicial */
+    }
 }

@@ -1,13 +1,17 @@
 import Bolinhas from "../../components/bolinhas/Bolinhas"
 import styles from "./login.module.scss"
-import setaEsquerda from "../../components/img/setaEsquerda.svg"
-import purpleArrow from "../../components/img/purpleArrow.svg"
+
 import { useNavigate } from "react-router-dom"
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { apiDev } from "../../services/api"
 import { toast } from "react-toastify"
+import Titulo from "../../components/telaInicio/titulo/Titulo"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 const Login = () => {
   const schema = yup.object().shape({
@@ -47,8 +51,11 @@ const Login = () => {
   }
 
   return (
+    
     <main className={styles.login__main}>
-      <Bolinhas />
+      <Titulo />
+
+      <Bolinhas isColored={true} />
       <section className={styles["login__section--login"]}>
         <h1>LOGIN</h1>
         <form onKeyDown={handleKeyPress}>
@@ -56,7 +63,6 @@ const Login = () => {
             <input type="text" placeholder="E-mail" {...register("email")} />
             {errors.email && <span>{errors.email?.message}</span>}
           </div>
-
           <div>
             <input
               type="password"
@@ -72,13 +78,13 @@ const Login = () => {
       <section className={styles["login__section--buttons"]}>
         <button
           className={styles["s-buttons__back"]}
-          onClick={() => navigate("/")}
-        >
+          onClick={() => navigate("/")}>
+
           <div className={styles["s-buttons__blur--White"]} />
 
           <div className={styles["s-buttons__backElements"]}>
-            <img src={setaEsquerda} alt="seta branca" />
-            <span>Voltar</span>
+            
+            <span><FontAwesomeIcon icon={faCaretLeft} /> Voltar</span>
           </div>
         </button>
 
@@ -90,8 +96,8 @@ const Login = () => {
           <div className={styles["s-buttons__blur--Purple"]} />
 
           <div className={styles["s-buttons__nextElements"]}>
-            <img src={purpleArrow} alt="seta roxa" />
-            <span>Entrar</span>
+            <span>Entrar <FontAwesomeIcon icon={faCaretRight}/>
+            </span>
           </div>
         </button>
       </section>
