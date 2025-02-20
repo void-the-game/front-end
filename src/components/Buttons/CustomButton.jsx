@@ -12,6 +12,7 @@ function CustomButton({
   imgHeight,
   onClick,
 }) {
+
   const buttonStyle = {
     width: width || "150px",
     height: height || "50px",
@@ -22,10 +23,8 @@ function CustomButton({
     fontWeight: fontWeight || "100",
     padding: "10px",
     backgroundColor: backColor || "transparent",
-    color: color || "#fff",
     border: "none",
     textDecoration: "none",
-
     cursor: "pointer",
   }
 

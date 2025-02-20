@@ -5,72 +5,128 @@
     min-height: 100vh;
     position: relative;
 
-
     .main {
         display: flex;
         justify-content: center;
         align-items: center;
-        
+        padding-top: 50px;
+
 
         .titulo-cadastro {
             color: #D8D8D8;
             margin-bottom: 20px;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-family: var(--font-family-ace);
-            
         }
 
-        
+        .div-container-inputs {
+            background-color: #000000;
+            width: 79%;
+            max-width: 430px;
+            border-radius: 100px;
+            padding: 50px 50px 30px 50px;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative; /* Para aplicar o pseudo-elemento */
+            
+            /* Pseudo-elemento para a borda animada */
+            &::before {
+                content: '';
+                position: absolute;
+                top: -4px;
+                left: -4px;
+                right: -4px;
+                bottom: -4px;
+                border-radius: 100px; /* Borda arredondada */
+                background: linear-gradient(
+                    45deg,
+                    #da0392, #eb069e, #eb069e,#eb069e, #ffff00, #2baf3d, #0000ff, #468ac2, #2efcfc
+                );
+                background-size: 400% 400%;
+                z-index: -1;
+                animation: gradientBorder 8s linear infinite, rotateGradient 12s linear infinite;
 
-            .div-container-inputs {
-                background-color: #262251;
-                width: 79%;
-                max-width: 430px;
+            }
+
+            /* Borda interna para manter o fundo */
+            &::after {
+                content: '';
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                right: 3px;
+                bottom: 3px;
+                background-color: #000000;
                 border-radius: 100px;
-                padding: 60px 30px 30px 30px;          
-                margin-top: 20px;
+                z-index: -1;
+            }
+
+            form {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
                 gap: 10px;
-                form{
+                width: 85%;
+
+                div {
                     display: flex;
                     flex-direction: column;
+                    min-height: 75px;
                     gap: 10px;
-                    width: 85%;
-                    div{
-                        display: flex;
-                        flex-direction: column;
-                        min-height: 75px;
-                        gap: 10px;
-                        
-                        span {
-                            color: #CB2E2E;
-                            font-size: 1.4rem;
-                            margin-left: 15px;
-                            font-family: 'Aldrich';
-                          }
-                    }
 
-                    
-                }
-                
-                .div-password-errors {
-                    min-height: 0;
                     span {
-                        font-size: 1rem;
+                        color: #ce0000;
+                        font-size: 1.2rem;
+                        font-family: monospace;
+                        align-items: center;
+                        text-align: left;
+                        padding: 3px;
+
                     }
+                   
                 }
-               
+
             }
-        
+
+            .div-password-errors {
+                min-height: 0;
+                background-color: rgba(44, 44, 44, 0.671);
+                border-radius: 20px;
+                padding: 15px 15px;
+
+
+
+
+                span {
+                    font-size: 1rem;
+                    color: white;
+                    text-align: center;
+                    
+
+                }
+            }
+        }
     }
 }
 
+/* Keyframes para o efeito de borda colorida (somente a cor gira) */
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
-
-.container-buttons{
+/* Código dos botões e do Toastify permanece intacto */
+.container-buttons {
     align-self: center;
     display: flex;
     justify-content: space-between;
@@ -78,17 +134,19 @@
     padding: 30px 0px 90px;
     width: 85%;
     max-width: 1430px;
-    
 }
+
 .div-btnConcluir,
 .div-btnVoltar {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    
 }
 
 .div-btnConcluir {
-    
+
 
     &__blur {
         position: absolute;
@@ -96,51 +154,61 @@
         border-radius: 100%;
         height: 5rem;
         width: 12rem;
-        background: rgba(104, 213, 203, 0.66);
+        background: rgba(177, 177, 177, 0.233);         
         filter: blur(32.5px);
     }
 
     a {
         z-index: 5;
+        
 
         .btn-concluir {
             z-index: 10;
             display: flex;
             flex-direction: row-reverse;
             gap: 1rem;
+            color: white;
+            transition: all 0.3s ease; /* Transição suave para todos os efeitos */
+
+            
 
             &:hover {
-                scale: 1.1;
-                text-shadow: 0 0 5px #fff;
-                cursor: pointer;
-                transition: 0.3s;
+                scale: 1.1; /* Aumentando o tamanho */
+                text-shadow: 0 0 10px #fff, 0 0 20px #047c36, 0 0 30px #00ff40; /* Efeito de sombra mais forte */
             }
 
             span {
                 font-family: var(--font-family-aldri);
                 font-size: 2rem;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                
 
                 &:active {
                     color: rgb(1, 170, 1);
-
                 }
             }
-
-
         }
     }
 }
 
 .div-btnVoltar {
-    
 
+    .btn-voltar{
+        transition: all 0.3s ease; /* Transição suave para todos os efeitos */
+
+    }
+    
     &__blur {
         position: absolute;
         z-index: 1;
         border-radius: 100%;
         height: 5rem;
         width: 12rem;
-        background: rgba(211, 211, 211, 0.53);
+        background: rgba(177, 177, 177, 0.233);         
         filter: blur(32.5px);
     }
 
@@ -151,21 +219,24 @@
             z-index: 10;
             display: flex;
             gap: 1rem;
+            color: white;
 
             &:hover {
-                scale: 1.1;
-                text-shadow: 0 0 5px #fff;
-                cursor: pointer;
-                transition: 0.3s;
+                scale: 1.1; /* Aumentando o tamanho */
+                text-shadow: 0 0 10px #fff, 0 0 20px #047c36, 0 0 30px #00ff40; /* Efeito de sombra mais forte */
             }
 
             span {
                 font-family: var(--font-family-aldri);
                 font-size: 2rem;
+                display: flex;
+                gap: 5px;
+                justify-content: center;
+                align-items: center;
+
 
                 &:active {
                     color: rgb(6, 52, 151);
-
                 }
             }
         }
@@ -176,8 +247,6 @@
     .toast-message {
         background-color: #262251;
         color: white;
-
-        
 
         button {
             color: white;

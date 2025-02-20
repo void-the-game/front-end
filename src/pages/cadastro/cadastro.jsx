@@ -4,14 +4,16 @@ import { Link, useNavigate } from "react-router-dom"
 import CustomButton from "../../components/Buttons/CustomButton"
 import "./cadastro.scss"
 import CustomInput from "../../components/Inputs/CustomInputs"
-import setaEsquerda from "../../components/img/setaEsquerda.svg"
-import setaDireita from "../../components/img/setaDireita.svg"
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
 import { apiDev } from "../../services/api"
 import { toast } from "react-toastify"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+import Titulo from "../../components/telaInicio/titulo/Titulo"
 
 function Cadastro() {
   const schema = yup.object().shape({
@@ -102,7 +104,8 @@ function Cadastro() {
   return (
     <>
       <section className="container-cadastro">
-        <Bolinhas isColored={false} />
+        <Titulo/>
+        <Bolinhas isColored={true} />
         <main className="main">
           <div className="div-container-inputs">
             <h2 className="titulo-cadastro">CADASTRO</h2>
@@ -149,23 +152,7 @@ function Cadastro() {
                   onChange={handlePasswordChange}
                 />
                 {errors.password && <span>{errors.password?.message}</span>}
-                <div className="div-password-errors">
-                  {!passwordErrors.minLength && (
-                    <span>A senha deve conter 8 caracteres.</span>
-                  )}
-                  {!passwordErrors.hasUppercase && (
-                    <span>A senha deve conter uma letra maiúscula.</span>
-                  )}
-                  {!passwordErrors.hasLowercase && (
-                    <span>A senha deve conter uma letra minúscula.</span>
-                  )}
-                  {!passwordErrors.hasNumber && (
-                    <span>A senha deve conter um número.</span>
-                  )}
-                  {!passwordErrors.hasSpecial && (
-                    <span>A senha deve conter um caractere especial.</span>
-                  )}
-                </div>
+                
               </div>
               <div>
                 <CustomInput
@@ -179,6 +166,11 @@ function Cadastro() {
                   <span>{errors.passwordConfirm?.message}</span>
                 )}
               </div>
+              <div className="div-password-errors">
+                  {!passwordErrors.minLength && (
+                    <span>A senha deve ter pelo menos 8 caracteres, conter uma letra maiúscula, uma minúscula, um número e um caractere especial</span>
+                  )}
+                </div>
             </form>
           </div>
         </main>
@@ -187,11 +179,8 @@ function Cadastro() {
             <div className="div-btnVoltar__blur"></div>
             <Link to="/" style={{ textDecoration: "none" }}>
               <CustomButton
-                label="Voltar"
+                label={<><FontAwesomeIcon icon={faCaretLeft} /> Voltar</>}
                 width="5rem"
-                imageSrc={setaEsquerda}
-                imgWidth="1.5rem"
-                imgHeight="1.5rem"
                 className="btn-voltar"
               />
             </Link>
@@ -200,12 +189,9 @@ function Cadastro() {
             <div className="div-btnConcluir__blur"></div>
             <Link to="/" style={{ textDecoration: "none" }}>
               <CustomButton
-                label="Concluir"
+                label={<><FontAwesomeIcon icon={faCaretRight} /> Seguir</>}
                 width="5rem"
                 className="btn-concluir"
-                imageSrc={setaDireita}
-                imgWidth="1.5rem"
-                imgHeight="1.5rem"
                 onClick={handleSubmit(handleRegister)}
               />
             </Link>

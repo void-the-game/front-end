@@ -1,193 +1,234 @@
-.login__main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: end;
-  gap: 5%;
-  align-items: center;
-  position: relative;
-
-  .login__section--login {
-    background-color: #262251;
-    width: 79%;
+  .login__main {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
     align-items: center;
-    padding: 60px 30px;
-    border-radius: 100px;
-    max-width: 430px;
-
-    h1 {
-      color: #D8D8D8;
-      font-size: 2.5rem;
-      font-family: 'Bruno Ace';
-      margin-bottom: 50px;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: 85%;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      height: 75px;
-    }
-
-    input {
-      background: #948EDD;
-      border: 1px solid #FFFFFF;
-      border-radius: 10px;
-      padding: 10px 20px;
-      color: #F0EFF3;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-      font-size: 1.3rem;
-      font-family: 'Aldrich';
-      outline: 0;
-    }
-
-    span {
-      color: #CB2E2E;
-      font-size: 1.4rem;
-      margin-left: 15px;
-      font-family: 'Aldrich';
-    }
-
-    input::placeholder {
-      color: #F0EFF3;
-    }
-
-    a {
-      color: #5F9FFF;
-      font-size: 1.3rem;
-      line-height: 30px;
-      text-decoration: none;
-      border-bottom: 2px solid;
-      font-family: 'Aldrich';
-      margin-top: 35px;
-
-      &:hover {
-        color: #F0EFF3;
-      }
-
-      &:active{
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
-        transform: scale(0.98); 
-      }
-    }
-
-    @media (max-height: 646px) {
-      margin-top: 10px;
-    }
-  }
-
-  .login__section--buttons {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 30px 0px 90px;
-    width: 85%;
-    max-width: 1430px;
-    
+    gap: 15px;
 
-    button {
-      height: 4rem;
-      width: 8rem;
-      background: none;
-      border: none;
+    .login__section--login {
       position: relative;
+      background-color: #000005;
+      /* Remove the original white border since we'll create an animated one */
+      border: none;
+      width: 80%;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
+      padding: 90px 50px; 
+      border-radius: 300px;
+      max-width: 430px;
+      /* Keep the original box shadow */
+      box-shadow: 0px 0px 15px 10px rgba(86, 97, 136, 0.589);
+      margin-top: 75px;
+      z-index: 1;
+
+      /* Create a pseudo-element for the animated border */
+      &::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -7px;
+        border-radius: 303px; /* Slightly larger than the original to account for border width */
+        background: linear-gradient(
+          45deg,
+          #da0392, #eb069e,#eb069e, #ffff00, #00ff00, #0000ff, #468ac2, #2efcfc
+        );
+        background-size: 400% 400%;
+        z-index: -1;
+        animation: gradientBorder 8s linear infinite, rotateGradient 12s linear infinite;
+      }
+
+      /* Add a pseudo-element to create the inner background */
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000005;
+        border-radius: 300px;
+        z-index: -1;
+      }
+
+      h1 {
+        color: #D8D8D8;
+        font-size: 2.5rem;
+        font-family: 'Bruno Ace';
+        margin-bottom: 50px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 85%;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 75px;
+      }
+
+      input {
+        background: #ffffff00;
+        border: 1px solid #FFFFFF;
+        border-radius: 10px;
+        padding: 10px 20px;
+        color: #b3b3f7;
+        font-size: 1.3rem;
+        font-family: 'Aldrich';
+        outline: 0;
+      }
 
       span {
-        font-size: 1.5rem;
-        color: #FFFFFF;
+        color: #CB2E2E;
+        font-size: 1.2rem;
+        margin-left: 15px;
         font-family: 'Aldrich';
-        margin-top: 5px;
       }
 
-
-      img {
-        width: 1.4rem;
-        height: 1.4rem;
+      input::placeholder {
+        color: #d6d6d6;
       }
 
-      &:hover {
-        scale: 1.1;
-        text-shadow: 0 0 5px #fff;
-        transition: 0.1s;
-      }
-    }
+      a {
+        color: #ffffff;
+        font-size: 1.3rem;
+        line-height: 30px;
+        text-decoration: none;
+        border-bottom: 2px solid;
+        font-family: 'Aldrich';
+        margin-top: 35px;
 
-    .s-buttons__back {
-      &:active {
-        span {
-          color: #333333;
+        &:hover {
+          color: #da1111cc;
+        }
+
+        &:active{
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
+          transform: scale(0.98); 
         }
       }
-    }
 
-    .s-buttons__next {
-      &:active {
-        span {
-          color: #4B0082;
-        }
+      @media (max-height: 646px) {
+        margin-top: 10px;
       }
     }
 
-    .s-buttons__blur--White,
-    .s-buttons__blur--Purple {
-      filter: blur(32.5px);
-      width: 100%;
-      height: 100%;
-    }
-
-    .s-buttons__blur--White {
-      background: rgba(211, 211, 211, 0.53);  
-    }
-
-    .s-buttons__blur--Purple {
-      background: rgba(191, 104, 213, 0.66);
-    }
-
-    .s-buttons__backElements,
-    .s-buttons__nextElements {
-      position: absolute;
+    .login__section--buttons {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      width: 100%;
-      gap: 10px;
-    }
-
-    .s-buttons__nextElements {
-      flex-direction: row-reverse;
-      justify-content: end;
-    }
-
-    @media (min-width: 769px) {
+      padding: 60px 0px 90px;
+      width: 85%;
+      max-width: 1430px;
+    
       button {
-        height: 5rem;
-        width: 10rem;
-
+        height: 4rem;
+        width: 8rem;
+        background: none;
+        border: 2px solid transparent; /* Adicionando borda para criar um efeito no hover */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease; /* Transição suave para todos os efeitos */
+          
+        /* Fundo e borda em estado normal */
+        
         span {
-          font-size: 2rem;
+          font-size: 1.5rem;
+          color: #FFFFFF;
+          font-family: 'Aldrich';
+          margin-top: 5px;
+        }
+    
+        img {
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+    
+        &:hover {
+          scale: 1.1; /* Aumentando o tamanho */
+          text-shadow: 0 0 10px #fff, 0 0 20px #047c36, 0 0 30px #00ff40; /* Efeito de sombra mais forte */
         }
 
-        img {
-          width: 1.8rem;
-        height: 1.8rem;
+      }
+    
+      .s-buttons__blur--White,
+      .s-buttons__blur--Purple {
+        filter: blur(32.5px);
+        width: 100%;
+        height: 100%;
+      }
+
+      .s-buttons__blur--White {
+        background: rgba(177, 177, 177, 0.233);  
+      }
+
+      .s-buttons__blur--Purple {
+        background: rgba(177, 177, 177, 0.233);  
+      }
+      
+      .s-buttons__backElements,
+      .s-buttons__nextElements {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .s-buttons__nextElements {
+        flex-direction: row-reverse;
+        justify-content: end;
+      }
+
+      @media (min-width: 769px) {
+        button {
+          height: 5rem;
+          width: 10rem;
+
+          span {
+            font-size: 2rem;
+          }
+
+          img {
+            width: 1.8rem;
+            height: 1.8rem;
+          }
         }
       }
     }
-    
   }
 
+  /* Add the keyframes for the animations */
+  @keyframes gradientBorder {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
-}
-
+  @keyframes rotateGradient {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
