@@ -5,7 +5,7 @@ function Titulo(){
 
     return(
         <div>
-            <h1 className='titulo-void'>VOID</h1>
+            <h1 className='titulo-void'>V O I D</h1>
         </div>  
     )
     
