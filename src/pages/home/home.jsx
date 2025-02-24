@@ -9,6 +9,8 @@ import BtnAjudaImg from "../../components/img/btnAjuda.svg"
 import CustomButton from "../../components/Buttons/CustomButton"
 import { useState } from "react"
 
+
+
 function Home() {
   const [user] = useState(localStorage.getItem("@Void:user") || null)
 

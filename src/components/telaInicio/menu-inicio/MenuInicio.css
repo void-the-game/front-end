@@ -10,10 +10,44 @@
     justify-content: center;
     flex-direction: column;
     margin: 0px auto;
-    border-radius: 50%;
+    border-radius: 1000px;
     border: none;
     position: relative;
+    padding: 120px 105px;
+    background-color: #0000053d;
+    
+    /* Create animated border */
+    &::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 310px;
+        background: linear-gradient(
+            45deg,
+            #da0392, #eb069e, #eb069e, #ffff00, #00ff00, #0000ff, #468ac2, #2efcfc
+        );
+        background-size: 400% 400%;
+        z-index: -1;
+        animation: gradientBorder 8s linear infinite, rotateGradient 12s linear infinite;
+    }
+
+    /* Inner background */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000005;
+        border-radius: 300px;
+        z-index: -1;
+    }
 }
+
 .container-blur2 {
     position: relative;
     z-index: 2;
@@ -25,24 +59,18 @@
 
 .blurback {
     position: absolute;
-    background: rgba(9, 114, 235, 0.39);
-    filter: blur(50px);
-    z-index: 1;
-    width: 40rem;
-    height: 15rem;
-    border-radius: 50%;
-    animation: pulsar 3s ease-in-out infinite; /* Adicionando a animação */
+    background: radial-gradient(circle, rgb(0, 0, 0),rgb(0, 0, 0),rgb(9, 178, 184)); /* Gradiente do centro para fora */
+    filter: blur(20px); /* Filtro de desfoque */
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%; /* Tornar a forma circular */
+    animation: pulsar 5s ease-in-out infinite; /* Animação pulsante */
+    z-index: -2;
+    
 }
 
-.blurback2 {
-    position: absolute;
-    width: 25rem;
-    height: 8rem;
-    border-radius: 50%;
-    z-index: 10;
-    background: rgba(51, 9, 107, 0.521);
-    filter: blur(50px);
-}
+
+
 
 .btn-inicio {
     display: flex;
@@ -71,18 +99,38 @@
     justify-content: center;
 }
 
-/* Definindo a animação "pulsar" */
 @keyframes pulsar {
     0% {
         transform: scale(1);
-        opacity: 0.7; /* Opacidade inicial */
+        opacity: 0.7;
     }
     50% {
-        transform: scale(1.2); /* Aumenta o tamanho */
-        opacity: 0.8; /* Leve aumento da opacidade */
+        transform: scale(1.2);
+        opacity: 0.8;
     }
     100% {
-        transform: scale(1); /* Diminui o tamanho */
-        opacity: 0.7; /* Volta para a opacidade inicial */
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
