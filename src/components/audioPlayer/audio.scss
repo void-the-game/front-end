@@ -1,0 +1,33 @@
+.sound {
+    background-color: #143f91;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 12px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 50px; 
+    max-height: 50px; 
+    display: flex; 
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 1000; /* Para garantir que fique acima de outros elementos */
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  
+  .sound:hover {
+    background-color: #860202; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+  }
+  
+  .sound:active {
+    transform: scale(0.95);
+  }
+  
+  .sound:focus {
+    outline: none; 
+  }
+  
