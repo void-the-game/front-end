@@ -7,13 +7,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AudioPlayer from "./components/audioPlayer/audioPlayer"; // Importe o componente de áudio
+import BotaoAudio from "./components/audioPlayer/botaoAudio";
 
 function App() {
   return (
     <>
       <Router>
-        <AudioPlayer /> {/* Componente que controla o áudio */}
+        <BotaoAudio /> {/* Componente que controla o áudio */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cadastro" element={<Cadastro />} />
