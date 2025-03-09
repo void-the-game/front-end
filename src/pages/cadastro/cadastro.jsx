@@ -1,8 +1,7 @@
 import Bolinhas from "../../components/bolinhas/Bolinhas"
-
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import CustomButton from "../../components/Buttons/CustomButton"
-import "./cadastro.scss"
+import styles from "./cadastro.module.css"
 import CustomInput from "../../components/Inputs/CustomInputs"
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
@@ -10,10 +9,9 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
 import { apiDev } from "../../services/api"
 import { toast } from "react-toastify"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 import Titulo from "../../components/telaInicio/titulo/Titulo"
+import { BiSolidRightArrow } from "react-icons/bi"
+import { BiSolidLeftArrow } from "react-icons/bi"
 
 function Cadastro() {
   const schema = yup.object().shape({
@@ -103,12 +101,12 @@ function Cadastro() {
 
   return (
     <>
-      <section className="container-cadastro">
-        <Titulo/>
+      <section className={styles["container-cadastro"]}>
+        <Titulo />
         <Bolinhas isColored={true} />
-        <main className="main">
-          <div className="div-container-inputs">
-            <h2 className="titulo-cadastro">CADASTRO</h2>
+        <main className={styles.main}>
+          <div className={styles["div-container-inputs"]}>
+            <h2 className={styles["titulo-cadastro"]}>CADASTRO</h2>
             <form onKeyDown={handleKeyPress}>
               <div>
                 <CustomInput
@@ -152,7 +150,6 @@ function Cadastro() {
                   onChange={handlePasswordChange}
                 />
                 {errors.password && <span>{errors.password?.message}</span>}
-                
               </div>
               <div>
                 <CustomInput
@@ -166,36 +163,25 @@ function Cadastro() {
                   <span>{errors.passwordConfirm?.message}</span>
                 )}
               </div>
-              <div className="div-password-errors">
-                  {!passwordErrors.minLength && (
-                    <span>A senha deve ter pelo menos 8 caracteres, conter uma letra maiúscula, uma minúscula, um número e um caractere especial</span>
-                  )}
-                </div>
+              <div className={styles["div-password-errors"]}>
+                {!passwordErrors.minLength && (
+                  <span>
+                    A senha deve ter pelo menos 8 caracteres, conter uma letra
+                    maiúscula, uma minúscula, um número e um caractere especial
+                  </span>
+                )}
+              </div>
             </form>
           </div>
         </main>
-        <div className="container-buttons">
-          <div className="div-btnVoltar">
-            <div className="div-btnVoltar__blur"></div>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <CustomButton
-                label={<><FontAwesomeIcon icon={faCaretLeft} /> Voltar</>}
-                width="5rem"
-                className="btn-voltar"
-              />
-            </Link>
-          </div>
-          <div className="div-btnConcluir">
-            <div className="div-btnConcluir__blur"></div>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <CustomButton
-                label={<><FontAwesomeIcon icon={faCaretRight} /> Seguir</>}
-                width="5rem"
-                className="btn-concluir"
-                onClick={handleSubmit(handleRegister)}
-              />
-            </Link>
-          </div>
+        <div className={styles["container-buttons"]}>
+          <CustomButton blur onClick={() => navigate("/")}>
+            <BiSolidLeftArrow /> Voltar
+          </CustomButton>
+
+          <CustomButton blur onClick={handleSubmit(handleRegister)}>
+            Seguir <BiSolidRightArrow />
+          </CustomButton>
         </div>
       </section>
     </>

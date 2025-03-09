@@ -1,13 +1,12 @@
-import "./CustomInputs.scss"
+// import "./CustomInputs.scss"
+import styles from "./CustomInputs.module.css"
 
 function CustomInput({
   border,
   type,
   id,
-  label,
   placeholder,
   className,
-  classNameLabel,
   register,
   name,
   onChange,
@@ -17,17 +16,15 @@ function CustomInput({
   }
 
   return (
-    <>
-      <input
-        className={`${className} custom-input`}
-        style={InputStyle}
-        placeholder={placeholder || ""}
-        type={type || "text"}
-        id={id}
-        {...register(name)}
-        onChange={onChange}
-      />
-    </>
+    <input
+      className={`${className} ${styles["custom-input"]}`}
+      style={InputStyle}
+      placeholder={placeholder || ""}
+      type={type || "text"}
+      id={id}
+      {...register(name)}
+      onChange={onChange}
+    />
   )
 }
 
