@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './bolinhas.css'; 
-
+import React from 'react';
+import './bolinhas.css';
 
 const bolinhasConfig = [
     { cor: 'var(--azul)', top: '10%', left: '5%', size: '12px' },
@@ -24,21 +23,19 @@ const bolinhasConfig = [
     { cor: 'var(--branco)', top: '70%', left: '88%', size: '14px' },
     { cor: 'var(--verde)', top: '45%', left: '90%', size: '7px' },
     { cor: 'var(--branco)', top: '33%', left: '85%', size: '13px' },
-    { cor: 'var(--rosa)', top: '40%', left: '80%', size: '10px' }, 
-    { cor: 'var(--branco)', top: '80%', left: '40%', size: '8px' },  
-    { cor: 'var(--verde)', top: '30%', left: '80%', size: '9px' },  
-    { cor: 'var(--rosa)', top: '70%', left: '20%', size: '6px' },  
-    { cor: 'var(--branco)', top: '80%', left: '20%', size: '10px' },  
-    { cor: 'var(--branco)', top: '80%', left: '40%', size: '8px' },  
-    { cor: 'var(--rosa)', top: '75%', left: '60%', size: '9px' },  
-    { cor: 'var(--amarelo)', top: '70%', left: '80%', size: '14px' },  
-    { cor: 'var(--branco)', top: '85%', left: '30%', size: '12px' },  
-    { cor: 'var(--azul)', top: '85%', left: '70%', size: '6px' }, 
-    { cor: 'var(--branco)', top: '85%', left: '10%', size: '7px' },  
-    { cor: 'var(--branco)', top: '85%', left: '90%', size: '7px' },  
-
+    { cor: 'var(--rosa)', top: '40%', left: '80%', size: '10px' },
+    { cor: 'var(--branco)', top: '80%', left: '40%', size: '8px' },
+    { cor: 'var(--verde)', top: '30%', left: '80%', size: '9px' },
+    { cor: 'var(--rosa)', top: '70%', left: '20%', size: '6px' },
+    { cor: 'var(--branco)', top: '80%', left: '20%', size: '10px' },
+    { cor: 'var(--branco)', top: '80%', left: '40%', size: '8px' },
+    { cor: 'var(--rosa)', top: '75%', left: '60%', size: '9px' },
+    { cor: 'var(--amarelo)', top: '70%', left: '80%', size: '14px' },
+    { cor: 'var(--branco)', top: '85%', left: '30%', size: '12px' },
+    { cor: 'var(--azul)', top: '85%', left: '70%', size: '6px' },
+    { cor: 'var(--branco)', top: '85%', left: '10%', size: '7px' },
+    { cor: 'var(--branco)', top: '85%', left: '90%', size: '7px' }
 ];
-
 
 function Bolinhas({ isColored }) {
     return (
@@ -48,18 +45,18 @@ function Bolinhas({ isColored }) {
                     key={index}
                     className="bolinha"
                     style={{
-                        backgroundColor: isColored ? bolinha.cor : 'white', 
+                        backgroundColor: isColored ? bolinha.cor : 'white',
                         top: bolinha.top,
                         left: bolinha.left,
                         width: bolinha.size,
                         height: bolinha.size,
-                        boxShadow: `0px 0px 10px 5px ${isColored ? bolinha.cor : 'white'}`  
+                        boxShadow: `0px 0px 10px 5px ${isColored ? bolinha.cor : 'white'}`,
+                        animationDelay: `${Math.random() * 2}s`,  // Atraso aleatório para cada bolinha
                     }}
                 />
             ))}
         </div>
     );
 }
-
 
 export default Bolinhas;
