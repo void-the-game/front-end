@@ -4,7 +4,7 @@
     --verde: #00B027; /* Alterado para Verde */
     --rosa: #E603CF; /* Alterado para Magenta */
     --amarelo: #EBFF05; /* Amarelo Neon */
-  }
+}
   
 
 .bolinhas-container {
@@ -15,21 +15,14 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+} 
 
-  }
+.bolinha {
+  position: absolute;
+  border-radius: 50%;
+  animation: pulse 0.7s infinite alternate;
 
-  .bolinha {
-    position: absolute;
-    border-radius: 50%;
-    animation: pulse 0.7s infinite alternate;
-  }
+  
+}
   
   
-  @keyframes pulse {
-    from {
-      opacity: 0.5;
-    }
-    to {
-      opacity: 1;
-    }
-  }

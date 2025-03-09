@@ -1,6 +1,5 @@
 import Bolinhas from "../../components/bolinhas/Bolinhas"
-import styles from "./login.module.scss"
-
+import styles from "./login.module.css"
 import { useNavigate } from "react-router-dom"
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
@@ -8,10 +7,9 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { apiDev } from "../../services/api"
 import { toast } from "react-toastify"
 import Titulo from "../../components/telaInicio/titulo/Titulo"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import { faCaretLeft } from '@fortawesome/free-solid-svg-icons';
-
+import CustomButton from "../../components/Buttons/CustomButton"
+import { BiSolidRightArrow } from "react-icons/bi"
+import { BiSolidLeftArrow } from "react-icons/bi"
 
 const Login = () => {
   const schema = yup.object().shape({
@@ -23,7 +21,7 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) }) 
+  } = useForm({ resolver: yupResolver(schema) })
 
   const navigate = useNavigate()
 
@@ -51,7 +49,6 @@ const Login = () => {
   }
 
   return (
-    
     <main className={styles.login__main}>
       <Titulo />
 
@@ -76,30 +73,13 @@ const Login = () => {
       </section>
 
       <section className={styles["login__section--buttons"]}>
-        <button
-          className={styles["s-buttons__back"]}
-          onClick={() => navigate("/")}>
+        <CustomButton blur onClick={() => navigate("/")}>
+          <BiSolidLeftArrow /> Voltar
+        </CustomButton>
 
-          <div className={styles["s-buttons__blur--White"]} />
-
-          <div className={styles["s-buttons__backElements"]}>
-            
-            <span><FontAwesomeIcon icon={faCaretLeft} /> Voltar</span>
-          </div>
-        </button>
-
-        <button
-          type="submit"
-          className={styles["s-buttons__next"]}
-          onClick={handleSubmit(handleLogin)}
-        >
-          <div className={styles["s-buttons__blur--Purple"]} />
-
-          <div className={styles["s-buttons__nextElements"]}>
-            <span>Entrar <FontAwesomeIcon icon={faCaretRight}/>
-            </span>
-          </div>
-        </button>
+        <CustomButton blur onClick={handleSubmit(handleLogin)}>
+          Entrar <BiSolidRightArrow />
+        </CustomButton>
       </section>
     </main>
   )
