@@ -1,44 +1,35 @@
-function CustomButton({
-  label,
-  width,
-  height,
-  backColor,
-  color,
-  fontSize,
-  fontWeight,
-  imageSrc,
-  className,
-  imgWidth,
-  imgHeight,
-  onClick,
-}) {
+import styles from "./CustomButton.module.scss";
 
-  const buttonStyle = {
-    width: width || "150px",
-    height: height || "50px",
-    fontSize: fontSize || "2rem",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontWeight: fontWeight || "100",
-    padding: "10px",
-    backgroundColor: backColor || "transparent",
-    border: "none",
-    textDecoration: "none",
-    cursor: "pointer",
-  }
-
-  const imageStyle = {
-    width: imgWidth || "20px",
-    height: imgHeight || "20px",
-  }
-
+function CustomButton({ onClick, blur, children, terciary, next }) {
   return (
-    <button style={buttonStyle} className={className} onClick={onClick}>
-      {imageSrc && <img src={imageSrc} alt="button-icon" style={imageStyle} />}
-      <span>{label}</span>
+    <button
+      className={
+        blur
+          ? styles["button--primary"]
+          : terciary
+          ? styles["button--terciary"]
+          : styles["button--secondary"]
+      }
+      onClick={onClick}
+    >
+      {blur ? (
+        <>
+          <div className={styles["button--primary__div-blur"]} />
+          <div
+            className={`${styles["button--primary__div-elements"]} ${
+              next
+                ? styles["button--primary__div-elements-next"]
+                : styles["button--primary__div-elements-back"]
+            }`}
+          >
+            <span>{children}</span>
+          </div>
+        </>
+      ) : (
+        <span>{children}</span>
+      )}
     </button>
-  )
+  );
 }
 
-export default CustomButton
+export default CustomButton;
