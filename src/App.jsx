@@ -1,6 +1,5 @@
-// src/App.jsx
 import Home from "./pages/home/home";
-import "./globalize.css";
+import "./globalize.scss";
 import "./index.scss";
 import Cadastro from "./pages/cadastro/cadastro";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -16,7 +15,7 @@ function App() {
         <BotaoAudio /> {/* Componente que controla o áudio */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/register" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
