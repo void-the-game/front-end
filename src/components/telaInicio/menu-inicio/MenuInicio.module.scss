@@ -72,25 +72,6 @@
 
 
 
-.btn-inicio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: var(--font-family-menu);
-    z-index: 10;
-    position: relative;
-    color: #dadada;
-    transition: all 0.3s ease;
-}
-
-.btn-inicio:hover {
-    cursor: pointer;
-    scale: 1.1;
-    text-shadow: 0px 0px 10px #00B027;
-    color: #fff;
-}
-
 .borda-menu-div {
     border-bottom: 3px solid #fff;
     z-index: 10;

@@ -46,3 +46,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 } 
+:root{
+	--azul: #2e82b9;  /* Alterado para Azul */
+    --branco: #fff;  /* Azul */
+    --verde: #00B027; /* Alterado para Verde */
+    --rosa: #E603CF; /* Alterado para Magenta */
+    --amarelo: #EBFF05; /* Amarelo Neon */
+}
+.Toastify {
+	.toast-message {
+			background-color: #262251;
+			color: white;
+
+			button {
+					color: white;
+					opacity: 1;
+			}
+	}
+}

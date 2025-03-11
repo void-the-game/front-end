@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaVolumeDown, FaVolumeMute } from "react-icons/fa";
-import "./audio.scss";
+import styles from "./audio.module.scss";
 
 const BotaoAudio = () => {
   const [isMuted, setIsMuted] = useState(true); // Alterei o estado para "isMuted"
@@ -37,7 +37,7 @@ const BotaoAudio = () => {
     <div>
       <button
         onClick={toggleAudio}
-        className="sound"
+        className={styles.sound}
         aria-label={isMuted ? "Desativar mudo" : "Ativar mudo"}
       >
         {isMuted ? <FaVolumeMute /> : <FaVolumeDown />}
