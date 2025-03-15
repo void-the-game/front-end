@@ -1,49 +1,49 @@
-import React, { useState, useEffect } from "react";
-import { FaVolumeDown, FaVolumeMute } from "react-icons/fa";
-import styles from "./audio.module.scss";
+import React, { useState, useEffect } from 'react'
+import { FaVolumeDown, FaVolumeMute } from 'react-icons/fa'
+import styles from './audio.module.scss'
 
 const BotaoAudio = () => {
-  const [isMuted, setIsMuted] = useState(true); // Alterei o estado para "isMuted"
-  const [audio, setAudio] = useState(null);
+  const [isMuted, setIsMuted] = useState(true) // Alterei o estado para "isMuted"
+  const [audio, setAudio] = useState(null)
 
   useEffect(() => {
-    const audioElement = new Audio("/audio/audio3.mp3");
-    audioElement.loop = true;
+    const audioElement = new Audio('/audio/audio3.mp3')
+    audioElement.loop = true
 
-    setAudio(audioElement);
+    setAudio(audioElement)
 
     return () => {
       if (audioElement) {
-        audioElement.pause();
-        setIsMuted(true);
+        audioElement.pause()
+        setIsMuted(true)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   const toggleAudio = () => {
-    if (!audio) return;
+    if (!audio) return
     if (isMuted) {
-      audio.muted = false; // Desmutar
-      setIsMuted(false);
-      audio.play(); // Reproduzir o áudio caso esteja tocando
+      audio.muted = false // Desmutar
+      setIsMuted(false)
+      audio.play() // Reproduzir o áudio caso esteja tocando
     } else {
-      audio.muted = true; // Mudar para mudo
-      setIsMuted(true);
-      audio.pause(); // Pausar o áudio
+      audio.muted = true // Mudar para mudo
+      setIsMuted(true)
+      audio.pause() // Pausar o áudio
     }
-  };
+  }
 
   return (
     <div>
       <button
         onClick={toggleAudio}
         className={styles.sound}
-        aria-label={isMuted ? "Desativar mudo" : "Ativar mudo"}
+        aria-label={isMuted ? 'Desativar mudo' : 'Ativar mudo'}
       >
         {isMuted ? <FaVolumeMute /> : <FaVolumeDown />}
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default BotaoAudio;
+export default BotaoAudio
