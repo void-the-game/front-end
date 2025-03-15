@@ -1,4 +1,4 @@
-import styles from "./CustomInputs.module.scss";
+import styles from './CustomInputs.module.scss'
 
 function CustomInput({
   border,
@@ -11,20 +11,20 @@ function CustomInput({
   onChange,
 }) {
   const InputStyle = {
-    border: border || "1px solid #fff",
-  };
+    border: border || '1px solid #fff',
+  }
 
   return (
     <input
-      className={`${className} ${styles["custom-input"]}`}
+      className={`${className} ${styles['custom-input']}`}
       style={InputStyle}
-      placeholder={placeholder || ""}
-      type={type || "text"}
+      placeholder={placeholder || ''}
+      type={type || 'text'}
       id={id}
       {...register(name)}
       onChange={onChange}
     />
-  );
+  )
 }
 
-export default CustomInput;
+export default CustomInput

@@ -1,33 +1,33 @@
-import Bolinhas from "../../components/bolinhas/Bolinhas";
-import { useNavigate } from "react-router-dom";
-import CustomButton from "../../components/Buttons/CustomButton";
-import styles from "./cadastro.module.scss";
-import CustomInput from "../../components/Inputs/CustomInputs";
-import * as yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
-import { apiDev } from "../../services/api";
-import { toast } from "react-toastify";
-import Titulo from "../../components/telaInicio/titulo/Titulo";
-import { BiSolidRightArrow } from "react-icons/bi";
-import { BiSolidLeftArrow } from "react-icons/bi";
+import Bolinhas from '../../components/bolinhas/Bolinhas'
+import { useNavigate } from 'react-router-dom'
+import CustomButton from '../../components/Buttons/CustomButton'
+import styles from './cadastro.module.scss'
+import CustomInput from '../../components/Inputs/CustomInputs'
+import * as yup from 'yup'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useState } from 'react'
+import { apiDev } from '../../services/api'
+import { toast } from 'react-toastify'
+import Titulo from '../../components/telaInicio/titulo/Titulo'
+import { BiSolidRightArrow } from 'react-icons/bi'
+import { BiSolidLeftArrow } from 'react-icons/bi'
 
 function Cadastro() {
   const schema = yup.object().shape({
-    username: yup.string().required("Campo Obrigatório"),
-    email: yup.string().required("Campo Obrigatório").email("E-mail inválido"),
+    username: yup.string().required('Campo Obrigatório'),
+    email: yup.string().required('Campo Obrigatório').email('E-mail inválido'),
     emailConfirm: yup
       .string()
-      .required("Campo Obrigatório")
-      .email("E-mail inválido")
-      .oneOf([yup.ref("email")], "Os E-mails devem coincidir"),
-    password: yup.string().required("Campo Obrigatório"),
+      .required('Campo Obrigatório')
+      .email('E-mail inválido')
+      .oneOf([yup.ref('email')], 'Os E-mails devem coincidir'),
+    password: yup.string().required('Campo Obrigatório'),
     passwordConfirm: yup
       .string()
-      .required("Campo Obrigatório")
-      .oneOf([yup.ref("password")], "As senhas devem coincidir"),
-  });
+      .required('Campo Obrigatório')
+      .oneOf([yup.ref('password')], 'As senhas devem coincidir'),
+  })
 
   const [passwordErrors, setPasswordErrors] = useState({
     minLength: false,
@@ -35,18 +35,18 @@ function Cadastro() {
     hasLowercase: false,
     hasNumber: false,
     hasSpecial: false,
-  });
+  })
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm({ resolver: yupResolver(schema) })
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handlePasswordChange = (e) => {
-    const password = e.target.value;
+    const password = e.target.value
 
     setPasswordErrors({
       minLength: password.length >= 8,
@@ -54,59 +54,59 @@ function Cadastro() {
       hasLowercase: /[a-z]/.test(password),
       hasNumber: /[0-9]/.test(password),
       hasSpecial: /[!@#$%^&*(),.?":{}|<>]/.test(password),
-    });
-  };
+    })
+  }
 
   const handleRegister = (data) => {
-    let errors = [];
+    let errors = []
     for (const error in passwordErrors) {
-      errors.push(passwordErrors[error]);
+      errors.push(passwordErrors[error])
     }
 
     if (errors.some((err) => !err)) {
-      return;
+      return
     }
 
     const registerData = {
       username: data.username,
       email: data.email,
       password: data.password,
-    };
+    }
 
     toast.promise(
       apiDev
-        .post("/user/create", registerData)
+        .post('/user/create', registerData)
         .then((resp) => {
-          toast.success("Cadastro realizado com sucesso!", {
-            className: "toast-message",
-          });
-          navigate("/login");
+          toast.success('Cadastro realizado com sucesso!', {
+            className: 'toast-message',
+          })
+          navigate('/login')
         })
         .catch((err) => {
-          console.log(err);
-          toast.error("Erro no cadastro", { className: "toast-message" });
+          console.log(err)
+          toast.error('Erro no cadastro', { className: 'toast-message' })
         }),
       {
-        pending: "Cadastrando",
+        pending: 'Cadastrando',
       },
-      { className: "toast-message" }
-    );
-  };
+      { className: 'toast-message' },
+    )
+  }
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSubmit(handleRegister)();
+    if (e.key === 'Enter') {
+      handleSubmit(handleRegister)()
     }
-  };
+  }
 
   return (
     <>
-      <section className={styles["container-cadastro"]}>
+      <section className={styles['container-cadastro']}>
         <Titulo />
         <Bolinhas isColored={true} />
         <main className={styles.main}>
-          <div className={styles["div-container-inputs"]}>
-            <h2 className={styles["titulo-cadastro"]}>CADASTRO</h2>
+          <div className={styles['div-container-inputs']}>
+            <h2 className={styles['titulo-cadastro']}>CADASTRO</h2>
             <form onKeyDown={handleKeyPress}>
               <div>
                 <CustomInput
@@ -163,7 +163,7 @@ function Cadastro() {
                   <span>{errors.passwordConfirm?.message}</span>
                 )}
               </div>
-              <div className={styles["div-password-errors"]}>
+              <div className={styles['div-password-errors']}>
                 <span
                   style={{
                     color:
@@ -172,8 +172,8 @@ function Cadastro() {
                       !passwordErrors.hasUppercase ||
                       !passwordErrors.hasNumber ||
                       !passwordErrors.hasSpecial
-                        ? "#ce0000"
-                        : "white",
+                        ? '#ce0000'
+                        : 'white',
                   }}
                 >
                   A senha deve ter pelo menos 8 caracteres, conter uma letra
@@ -183,8 +183,8 @@ function Cadastro() {
             </form>
           </div>
         </main>
-        <div className={styles["container-buttons"]}>
-          <CustomButton blur onClick={() => navigate("/")}>
+        <div className={styles['container-buttons']}>
+          <CustomButton blur onClick={() => navigate('/')}>
             <BiSolidLeftArrow /> Voltar
           </CustomButton>
 
@@ -194,7 +194,7 @@ function Cadastro() {
         </div>
       </section>
     </>
-  );
+  )
 }
 
-export default Cadastro;
+export default Cadastro
