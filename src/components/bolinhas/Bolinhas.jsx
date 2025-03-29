@@ -1,4 +1,5 @@
 import styles from './bolinhas.module.scss'
+import PropTypes from 'prop-types'
 
 const bolinhasConfig = [
   { cor: 'var(--azul)', top: '10%', left: '5%', size: '12px' },
@@ -56,6 +57,10 @@ function Bolinhas({ isColored }) {
       ))}
     </div>
   )
+}
+
+Bolinhas.propTypes = {
+  isColored: PropTypes.bool,
 }
 
 export default Bolinhas

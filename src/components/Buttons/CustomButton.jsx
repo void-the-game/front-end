@@ -1,4 +1,5 @@
 import styles from './CustomButton.module.scss'
+import PropTypes from 'prop-types'
 
 function CustomButton({ onClick, blur, children, terciary, next }) {
   return (
@@ -30,6 +31,14 @@ function CustomButton({ onClick, blur, children, terciary, next }) {
       )}
     </button>
   )
+}
+
+CustomButton.propTypes = {
+  blur: PropTypes.bool,
+  children: PropTypes.node,
+  next: PropTypes.bool,
+  terciary: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
 }
 
 export default CustomButton
