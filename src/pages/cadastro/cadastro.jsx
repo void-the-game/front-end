@@ -76,7 +76,7 @@ function Cadastro() {
     toast.promise(
       apiDev
         .post('/user/create', registerData)
-        .then((resp) => {
+        .then(() => {
           toast.success('Cadastro realizado com sucesso!', {
             className: 'toast-message',
           })
