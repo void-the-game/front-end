@@ -1,23 +1,23 @@
-import CustomButton from "../../Buttons/CustomButton";
-import styles from "./menuEntrar.module.scss";
-import { useNavigate } from "react-router-dom";
+import CustomButton from '../../Buttons/CustomButton'
+import styles from './menuEntrar.module.scss'
+import { useNavigate } from 'react-router-dom'
 
 function MenuEntrar() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   return (
     <div className={styles.containerMenuEntrar}>
-      <div className={styles["div-login"]}>
-        <CustomButton onClick={() => navigate("/login")}>Entrar</CustomButton>
+      <div className={styles['div-login']}>
+        <CustomButton onClick={() => navigate('/login')}>Entrar</CustomButton>
       </div>
 
-      <div className={styles["div-cadastro"]}>
-        <CustomButton onClick={() => navigate("/register")}>
+      <div className={styles['div-cadastro']}>
+        <CustomButton onClick={() => navigate('/register')}>
           Criar Conta
         </CustomButton>
       </div>
     </div>
-  );
+  )
 }
 
-export default MenuEntrar;
+export default MenuEntrar

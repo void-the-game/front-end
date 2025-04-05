@@ -1,12 +1,12 @@
-import Home from "./pages/home/home";
-import "./globalize.scss";
-import "./index.scss";
-import Cadastro from "./pages/cadastro/cadastro";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import BotaoAudio from "./components/audioPlayer/botaoAudio";
+import Home from './pages/home/home'
+import './globalize.scss'
+import './index.scss'
+import Cadastro from './pages/cadastro/cadastro'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Login from './pages/Login'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import BotaoAudio from './components/audioPlayer/botaoAudio'
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
         pauseOnHover
       />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

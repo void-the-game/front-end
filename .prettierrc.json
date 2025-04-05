@@ -3,7 +3,5 @@
   "singleQuote": true,
   "tabWidth": 2,
   "endOfLine": "auto",
-  "printWidth": 80,
-  "eslintIntegration": true,
-  "jsxBracketSameLine": true
+  "printWidth": 80
 }
