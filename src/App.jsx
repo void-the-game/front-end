@@ -1,4 +1,4 @@
-import Home from './pages/home/home'
+import Home from './pages/Home/Home'
 import './globalize.scss'
 import './index.scss'
 import Cadastro from './pages/cadastro/cadastro'
