@@ -1,5 +1,5 @@
 import CustomButton from '../../Buttons/CustomButton'
-import styles from './menuEntrar.module.scss'
+import styles from './MenuEntrar.module.scss'
 import { useNavigate } from 'react-router-dom'
 
 function MenuEntrar() {

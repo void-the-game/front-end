@@ -1,0 +1,114 @@
+:root {
+    --font-family-menu: "Aldrich", sans-serif;
+}
+
+.menu-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px auto;
+    aspect-ratio: 1/1;
+    min-width: 250px;
+    min-height: 250px;
+    border-radius: 50%;
+    padding: 40px;
+    position: relative;
+    background-color: #0000053d;
+    
+    /* Create animated border */
+    &::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 310px;
+        background: linear-gradient(
+            45deg,
+            #da0392, #eb069e, #eb069e, #ffff00, #00ff00, #0000ff, #468ac2, #2efcfc
+        );
+        background-size: 400% 400%;
+        z-index: -1;
+        animation: gradientBorder 8s linear infinite, rotateGradient 12s linear infinite;
+    }
+
+    /* Inner background */
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000005;
+        border-radius: 300px;
+        z-index: -1;
+    }
+}
+
+.container-blur2 {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blurback {
+    position: absolute;
+    background: radial-gradient(circle, rgb(0, 0, 0),rgb(0, 0, 0),rgb(9, 178, 184)); /* Gradiente do centro para fora */
+    filter: blur(20px); /* Filtro de desfoque */
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%; /* Tornar a forma circular */
+    animation: pulsar 5s ease-in-out infinite; /* Animação pulsante */
+    z-index: -2;
+    
+}
+
+.borda-menu-div {
+    border-bottom: 3px solid #fff;
+    z-index: 10;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
