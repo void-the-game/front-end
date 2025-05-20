@@ -9,9 +9,9 @@ function MenuInicio() {
   const handleClick = () => {
     if (variant) {
       window.gtag &&
-        window.gtag('event', 'click', {
+        window.gtag('event', 'menu_click', {
           test_name: 'menu_variant',
-          variant,
+          variant: variant,
         })
     }
   }
