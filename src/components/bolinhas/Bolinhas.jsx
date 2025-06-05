@@ -43,6 +43,7 @@ function Bolinhas({ isColored }) {
       {bolinhasConfig.map((bolinha, index) => (
         <div
           key={index}
+          data-testid="bolinha"
           className={styles.bolinha}
           style={{
             backgroundColor: isColored ? bolinha.cor : 'white',
