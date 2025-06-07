@@ -51,6 +51,7 @@ describe('Register Page Integration Testing', () => {
 
     expect(screen.getByText('Erro no cadastro')).toBeTruthy()
     expect(screen.getByText('Erro no cadastro')).toBeInTheDocument()
+    expect(screen.getByText('Erro no cadastro')).toBeVisible()
 
     expect(mockNavigate).not.toHaveBeenCalled()
 
@@ -88,6 +89,7 @@ describe('Register Page Integration Testing', () => {
     expect(
       screen.getByText('Cadastro realizado com sucesso!'),
     ).toBeInTheDocument()
+    expect(screen.getByText('Cadastro realizado com sucesso!')).toBeVisible()
 
     expect(mockNavigate).toHaveBeenCalledWith('/login')
   })

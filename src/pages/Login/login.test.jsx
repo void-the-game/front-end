@@ -70,6 +70,9 @@ describe('Login Page Integration Testing', () => {
     expect(
       screen.getByText('Erro na autenticação, verifique seu e-mail ou senha'),
     ).toBeInTheDocument()
+    expect(
+      screen.getByText('Erro na autenticação, verifique seu e-mail ou senha'),
+    ).toBeVisible()
 
     expect(mockNavigate).not.toHaveBeenCalled()
 
@@ -101,6 +104,7 @@ describe('Login Page Integration Testing', () => {
 
     expect(screen.getByText('Bem-Vindo ao VOID!')).toBeTruthy()
     expect(screen.getByText('Bem-Vindo ao VOID!')).toBeInTheDocument()
+    expect(screen.getByText('Bem-Vindo ao VOID!')).toBeVisible()
 
     expect(mockNavigate).toHaveBeenCalledWith('/')
 
