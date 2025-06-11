@@ -35,3 +35,29 @@ describe('Testing Home Page Navigation', () => {
     expect(mockNavigate).toHaveBeenCalledWith('/register')
   })
 })
+
+describe ('Homepage Security Tests',() => {
+  test('User token verification should be enabled', () => {
+    
+    localStorage.setItem('@Void:token', 'fake-jwt-token');
+    localStorage.setItem('@Void:user', 'fake-user');
+    render(<Home/>)
+
+    expect(screen.getByText('fake-user')).toBeTruthy()
+    expect(screen.getByText('fake-user')).toBeInTheDocument()
+    expect(screen.getByText('fake-user')).toBeVisible()
+
+    localStorage.clear() 
+  })
+
+  test('Should not be able to show user', () => {
+  render(<Home/>)
+  
+  expect(screen.getByText('Entrar')).toBeInTheDocument()
+  expect(screen.getByText('Entrar')).toBeVisible()
+
+  expect(screen.getByText('Criar Conta')).toBeInTheDocument()
+  expect(screen.getByText('Criar Conta')).toBeVisible()
+  })
+}) 
+

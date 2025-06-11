@@ -13,7 +13,7 @@ import { AbTestContext } from '../../contexts/AbTestContext'
 
 function Home() {
   const [user] = useState(localStorage.getItem('@Void:user') || null)
-
+  const [token] = useState(localStorage.getItem('@Void:token') || null)
   const variant = useContext(AbTestContext)?.variant
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function Home() {
         <div className={styles['container-menu-inicio']}>
           {variant === 'A' ? <MenuInicio /> : <MenuInicioVariantB />}
         </div>
-        {!user ? (
+        {!token ? (
           <div>
             <MenuEntrar />
           </div>
@@ -57,7 +57,7 @@ function Home() {
         </CustomButton>
       </div>
 
-      {user && (
+      {token && (
         <div className={styles['btnConfig-div']}>
           <img src={configIcon} alt="Icone de configuração" />
         </div>
