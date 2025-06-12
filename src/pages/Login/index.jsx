@@ -10,6 +10,7 @@ import Titulo from '../../components/telaInicio/titulo/Titulo'
 import CustomButton from '../../components/Buttons/CustomButton'
 import { BiSolidRightArrow } from 'react-icons/bi'
 import { BiSolidLeftArrow } from 'react-icons/bi'
+import * as Sentry from '@sentry/react'
 
 const Login = () => {
   const schema = yup.object().shape({
@@ -26,6 +27,10 @@ const Login = () => {
   const navigate = useNavigate()
 
   const handleLogin = (data) => {
+    Sentry.logger.info('Login attempt started', {
+      email: data.email.split('@')[0] + '@***',
+    })
+
     apiDev
       .post('/user/login', data)
       .then((resp) => {
@@ -33,12 +38,27 @@ const Login = () => {
         localStorage.setItem('@Void:token', resp.data.accessToken)
         toast.success('Bem-Vindo ao VOID!', { className: 'toast-message' })
         navigate('/')
+
+        Sentry.logger.info('Login successful', {
+          username: resp.data.username,
+          timestamp: new Date().toISOString(),
+        })
+
+        Sentry.setUser({
+          username: resp.data.username,
+        })
       })
       .catch((err) => {
         console.log(err)
         toast.error('Erro na autenticação, verifique seu e-mail ou senha', {
           className: 'toast-message',
         })
+
+        Sentry.logger.error('Login failed', {
+          error: err.message,
+          status: err.response?.status,
+        })
+        Sentry.captureException(err)
       })
   }
 

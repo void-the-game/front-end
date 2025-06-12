@@ -12,6 +12,7 @@ import { toast } from 'react-toastify'
 import Titulo from '../../components/telaInicio/titulo/Titulo'
 import { BiSolidRightArrow } from 'react-icons/bi'
 import { BiSolidLeftArrow } from 'react-icons/bi'
+import * as Sentry from '@sentry/react'
 
 function Cadastro() {
   const schema = yup.object().shape({
@@ -73,6 +74,10 @@ function Cadastro() {
       password: data.password,
     }
 
+    Sentry.logger.info('Register attempt started', {
+      email: data.email.split('@')[0] + '@***',
+    })
+
     toast.promise(
       apiDev
         .post('/user/create', registerData)
@@ -81,10 +86,20 @@ function Cadastro() {
             className: 'toast-message',
           })
           navigate('/login')
+
+          Sentry.logger.info('Register successful', {
+            username: data.username,
+            timestamp: new Date().toISOString(),
+          })
         })
         .catch((err) => {
           console.log(err)
           toast.error('Erro no cadastro', { className: 'toast-message' })
+
+          Sentry.logger.error('Register failed', {
+            error: err.message,
+            status: err.response?.status,
+          })
         }),
       {
         pending: 'Cadastrando',
