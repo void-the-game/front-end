@@ -7,7 +7,7 @@ import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useState } from 'react'
-import { apiDev } from '../../services/api'
+import { appUrl } from '../../services/api'
 import { toast } from 'react-toastify'
 import Titulo from '../../components/telaInicio/titulo/Titulo'
 import { BiSolidRightArrow } from 'react-icons/bi'
@@ -79,7 +79,7 @@ function Cadastro() {
     })
 
     toast.promise(
-      apiDev
+      appUrl
         .post('/user/create', registerData)
         .then(() => {
           toast.success('Cadastro realizado com sucesso!', {

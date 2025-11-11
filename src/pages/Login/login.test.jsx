@@ -2,11 +2,11 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
 import Login from '.'
-import { apiDev } from '../../services/api'
+import { appUrl } from '../../services/api'
 import MockAdapter from 'axios-mock-adapter'
 import { ToastContainer } from 'react-toastify'
 
-const apiMock = new MockAdapter(apiDev)
+const apiMock = new MockAdapter(appUrl)
 
 // Mock do useNavigate
 const mockNavigate = vi.fn()

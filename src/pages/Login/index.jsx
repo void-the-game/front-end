@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { apiDev } from '../../services/api'
+import { appUrl } from '../../services/api'
 import { toast } from 'react-toastify'
 import Titulo from '../../components/telaInicio/titulo/Titulo'
 import CustomButton from '../../components/Buttons/CustomButton'
@@ -31,7 +31,7 @@ const Login = () => {
       email: data.email.split('@')[0] + '@***',
     })
 
-    apiDev
+    appUrl
       .post('/user/login', data)
       .then((resp) => {
         localStorage.setItem('@Void:user', resp.data.username)
