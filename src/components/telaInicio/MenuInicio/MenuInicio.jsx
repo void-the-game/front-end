@@ -22,7 +22,7 @@ function MenuInicio() {
       <div className={styles['container-blur2']}>
         <div className={styles.blurback2}></div>
         <div className={styles['borda-menu-div']}>
-          <CustomButton onClick={handleClick}>JOGAR</CustomButton>
+          <CustomButton onClick={handleClick}>JOGAR AGORA</CustomButton>
         </div>
 
         <CustomButton>SALAS</CustomButton>
